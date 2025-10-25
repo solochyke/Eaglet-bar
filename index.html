@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-R8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eaglet Bar - Welcome</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-amber': '#f59e0b', // amber-500
+                        'brand-dark': '#111827', // gray-900
+                        'brand-medium': '#1f2937', // gray-800
+                        'brand-light': '#374151', // gray-700
+                    }
+                },
+            },
+        };
+    </script>
+    <!-- Custom CSS for the star rating -->
+    <style>
+        /* Hide the actual radio buttons */
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+
+        /* Style the star labels */
+        .star-rating label {
+            font-size: 2.5rem; /* Large, easy-to-tap stars */
+            color: #4b5563; /* gray-600 */
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+        }
+
+        /* * This is the magic:
+         * 1. `input:checked ~ label`: Colors all stars (labels) that come *after* the checked radio button.
+         * 2. `label:hover`: Colors the star being hovered.
+         * 3. `label:hover ~ label`: Colors all stars (labels) that come *after* the hovered star.
+         * Since the HTML is in reverse order (5 to 1), this creates the "fill" effect.
+        */
+        .star-rating input[type="radio"]:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #f59e0b; /* brand-amber */
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header class="bg-brand-medium shadow-lg sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Brand Name -->
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-white">
+                        <!-- Simple SVG for a wing/feather icon -->
+                        <svg class="inline-block h-8 w-8 -mt-1 text-brand-amber" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.092 1.21-.138 2.43-.138 3.662 0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.092-1.21.138-2.43.138-3.662z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9c0 .097.023.19.067.275 0 .097.023.19.067.275v.55a.75.75 0 0 1-1.5 0v-.55c0-.097.023-.19.067-.275 0-.097.023-.19.067-.275a.75.75 0 1 1 1.398 0c0 .097.023.19.067.275Z" />
+                        </svg>
+                        Eaglet Bar
+                    </span>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden sm:block sm:ml-6">
+                    <div class="flex space-x-4">
+                        <a href="#" id="nav-home" class="nav-link px-3 py-2 rounded-md text-sm font-medium" data-page="home">Home</a>
+                        <a href="#" id="nav-menu" class="nav-link px-3 py-2 rounded-md text-sm font-medium" data-page="menu">Menu</a>
+                        <a href="#" id="nav-reviews" class="nav-link px-3 py-2 rounded-md text-sm font-medium" data-page="reviews">Reviews</a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button (Optional, simple nav is fine for 3 items) -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+
+        <!-- Page: Home -->
+        <section id="home-page" class="page-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                Welcome to <span class="text-brand-amber">Eaglet Bar</span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                Your new favorite spot for classic cocktails, craft beers, and good times.
+                Relax, unwind, and discover your next great drink.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <button id="cta-menu" class="nav-link bg-brand-amber text-brand-dark font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-amber-400 transition duration-300 text-lg" data-page="menu">
+                    See The Menu
+                </button>
+                <button id="cta-reviews" class="nav-link bg-brand-light text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300 text-lg" data-page="reviews">
+                    Leave a Review
+                </button>
+            </div>
+        </section>
+
+        <!-- Page: Menu -->
+        <section id="menu-page" class="page-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 hidden">
+            <h1 class="text-4xl font-extrabold text-white text-center mb-12">
+                Our <span class="text-brand-amber">Drinks</span>
+            </h1>
+
+            <div class="space-y-12">
+                <!-- Menu Section: Signature Cocktails -->
+                <div>
+                    <h2 class="text-3xl font-bold text-brand-amber border-b-2 border-brand-light pb-2 mb-6">
+                        Signature Cocktails
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                        <div class="menu-item">
+                            <h3 class="text-xl font-semibold text-white">Eaglet Old Fashioned</h3>
+                            <p class="text-gray-400">Smoked bourbon, brown sugar, angostura bitters, orange peel.</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3 class="text-xl font-semibold text-white">Amber Negroni</h3>
+                            <p class="text-gray-400">Local gin, Campari, sweet vermouth, grapefruit twist.</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3 class="text-xl font-semibold text-white">Sky-High Sour</h3>
+                            <p class="text-gray-400">Whiskey, fresh lemon, simple syrup, egg white, red wine float.</p>
+                        </div>
+                        <div class="menu-item">
+                            <h3 class="text-xl font-semibold text-white">Midnight Espresso</h3>
+                            <p class="text-gray-400">Vodka, cold brew liqueur, fresh espresso, vanilla.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Section: Beer & Wine -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-brand-amber border-b-2 border-brand-light pb-2 mb-6">
+                            Craft Beer
+                        </h2>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>Local IPA - Hazy & Juicy</li>
+                            <li>Classic Pilsner - Crisp & Clean</li>
+                            <li>Dark Stout - Rich & Roasty</li>
+                            <li>Rotating Sour - Ask your server!</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-brand-amber border-b-2 border-brand-light pb-2 mb-6">
+                            Wine
+                        </h2>
+                        <ul class="space-y-3 text-gray-300">
+                            <li>Cabernet Sauvignon - Full-bodied Red</li>
+                            <li>Pinot Grigio - Light & Zesty White</li>
+                            <li>Rosé - Dry & Refreshing</li>
+                            <li>Prosecco - Bubbly & Fun</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Reviews -->
+        <section id="reviews-page" class="page-content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 hidden">
+            <h1 class="text-4xl font-extrabold text-white text-center mb-6">
+                What <span class="text-brand-amber">People Are Saying</span>
+            </h1>
+
+            <!-- Average Rating Display -->
+            <div class="bg-brand-medium rounded-lg shadow-xl p-6 mb-10 text-center">
+                <h2 class="text-2xl font-bold text-white mb-2">Overall Rating</h2>
+                <div id="average-rating-display" class="text-5xl font-extrabold text-brand-amber">
+                    <span class="loading-dots">...</span>
+                </div>
+                <p class="text-gray-400 mt-2">Based on <span id="review-count">0</span> reviews</p>
+            </div>
+
+            <!-- Review Submission Form -->
+            <div class="bg-brand-medium rounded-lg shadow-xl p-6 md:p-8 mb-12">
+                <h2 class="text-2xl font-bold text-white mb-6">Leave Your Review</h2>
+                <form id="review-form" class="space-y-6">
+                    <div>
+                        <label for="reviewer-name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                        <input type="text" id="reviewer-name" name="name" class="w-full bg-brand-light text-white border-brand-light rounded-lg shadow-sm focus:ring-brand-amber focus:border-brand-amber" placeholder="What should we call you?" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Your Rating</label>
+                        <!-- Star Rating Input -->
+                        <!-- Inputs are in reverse order to make the CSS `~` selector work -->
+                        <div class="star-rating flex flex-row-reverse justify-end items-center" dir="ltr">
+                            <input type="radio" id="star5" name="rating" value="5" required /><label for="star5">★</label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4">★</label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3">★</label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2">★</label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1">★</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="reviewer-comment" class="block text-sm font-medium text-gray-300 mb-2">Your Comments</label>
+                        <textarea id="reviewer-comment" name="comment" rows="4" class="w-full bg-brand-light text-white border-brand-light rounded-lg shadow-sm focus:ring-brand-amber focus:border-brand-amber" placeholder="Tell us about your experience..." required></textarea>
+                    </div>
+
+                    <!-- Form Status Message -->
+                    <div id="form-status" class="text-center font-medium hidden"></div>
+
+                    <button type="submit" id="submit-review-btn" class="w-full bg-brand-amber text-brand-dark font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-amber-400 transition duration-300 text-lg">
+                        Submit Review
+                    </button>
+                </form>
+            </div>
+
+            <!-- Review Display List -->
+            <h2 class="text-3xl font-bold text-white text-center mb-8">
+                Recent <span class="text-brand-amber">Reviews</span>
+            </h2>
+            <div id="reviews-list" class="space-y-6">
+                <!-- Loading state -->
+                <p id="reviews-loading" class="text-center text-gray-400 text-lg">Loading reviews...</p>
+                <!-- Reviews will be injected here by JavaScript -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-medium mt-16 shadow-inner">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-500">
+            <p>&copy; <span id="footer-year"></span> Eaglet Bar. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Firebase and App Logic -->
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import {
+            getAuth,
+            signInAnonymously,
+            signInWithCustomToken,
+            onAuthStateChanged
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import {
+            getFirestore,
+            collection,
+            addDoc,
+            onSnapshot,
+            serverTimestamp,
+            setLogLevel
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- GLOBAL VARIABLES & CONFIG ---
+
+        // Get variables from the environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db, auth, userId;
+        
+        // Firestore collection path for public data
+        const reviewsCollectionPath = `/artifacts/${appId}/public/data/reviews`;
+        let reviewsCollection;
+
+        // --- DOM Elements ---
+        const pages = document.querySelectorAll('.page-content');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const reviewForm = document.getElementById('review-form');
+        const reviewsList = document.getElementById('reviews-list');
+        const reviewsLoading = document.getElementById('reviews-loading');
+        const avgRatingDisplay = document.getElementById('average-rating-display');
+        const reviewCountDisplay = document.getElementById('review-count');
+        const formStatus = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-review-btn');
+
+        // --- 1. INITIALIZATION ---
+
+        function initializeAppLogic() {
+            try {
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+                
+                // Enable debug logging
+                setLogLevel('Debug');
+
+                // Set up authentication
+                setupAuthentication();
+
+                // Set up page navigation
+                setupNavigation();
+
+                // Set footer year
+                document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+            } catch (error) {
+                console.error("Error initializing app:", error);
+                reviewsLoading.textContent = "Error loading application. Please try again later.";
+            }
+        }
+
+        // --- 2. AUTHENTICATION ---
+
+        function setupAuthentication() {
+            onAuthStateChanged(auth, async (user) => {
+                if (user) {
+                    // User is signed in
+                    userId = user.uid;
+                    console.log("User authenticated:", userId);
+                    
+                    // User is authenticated, now we can safely set up Firestore listeners
+                    setupFirestore();
+
+                } else {
+                    // User is signed out, attempt to sign in
+                    console.log("User not authenticated, attempting sign-in...");
+                    try {
+                        if (initialAuthToken) {
+                            await signInWithCustomToken(auth, initialAuthToken);
+                        } else {
+                            await signInAnonymously(auth);
+                        }
+                    } catch (error) {
+                        console.error("Error signing in:", error);
+                        reviewsLoading.textContent = "Error connecting to review service.";
+                    }
+                }
+            });
+        }
+
+        // --- 3. PAGE NAVIGATION (SPA) ---
+
+        function setupNavigation() {
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.getAttribute('data-page');
+                    showPage(pageId);
+                });
+            });
+
+            // Set default page
+            showPage('home');
+        }
+
+        function showPage(pageId) {
+            // Hide all pages
+            pages.forEach(page => page.classList.add('hidden'));
+
+            // Show the target page
+            const targetPage = document.getElementById(`${pageId}-page`);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            // Update active nav link
+            navLinks.forEach(link => {
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('bg-brand-dark', 'text-white');
+                    link.classList.remove('text-gray-300', 'hover:bg-brand-light');
+                } else {
+                    link.classList.remove('bg-brand-dark', 'text-white');
+                    link.classList.add('text-gray-300', 'hover:bg-brand-light');
+                }
+            });
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // --- 4. FIRESTORE & REVIEWS ---
+
+        function setupFirestore() {
+            if (!db) {
+                console.error("Firestore DB is not initialized.");
+                return;
+            }
+            
+            // Define the collection reference
+            reviewsCollection = collection(db, reviewsCollectionPath);
+
+            // Listen for form submission
+            reviewForm.addEventListener('submit', handleReviewSubmit);
+
+            // Listen for real-time review updates
+            // We sort in memory to avoid needing a Firestore index
+            onSnapshot(reviewsCollection, (snapshot) => {
+                reviewsLoading.classList.add('hidden');
+                
+                let reviews = [];
+                let totalRating = 0;
+
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    // Ensure timestamp exists for sorting
+                    if (data.createdAt) {
+                        reviews.push(data);
+                        totalRating += Number(data.rating);
+                    }
+                });
+
+                // Sort reviews in memory (newest first)
+                reviews.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
+
+                // Render reviews
+                renderReviews(reviews);
+
+                // Update average rating
+                const reviewCount = reviews.length;
+                const avgRating = reviewCount > 0 ? (totalRating / reviewCount).toFixed(1) : 'N/A';
+                
+                avgRatingDisplay.textContent = avgRating;
+                reviewCountDisplay.textContent = reviewCount;
+
+            }, (error) => {
+                console.error("Error getting reviews:", error);
+                reviewsLoading.textContent = "Could not load reviews.";
+            });
+        }
+
+        async function handleReviewSubmit(e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            showFormStatus('Submitting your review...', 'text-brand-amber');
+
+            try {
+                const formData = new FormData(reviewForm);
+                const newReview = {
+                    name: formData.get('name'),
+                    rating: Number(formData.get('rating')),
+                    comment: formData.get('comment'),
+                    createdAt: serverTimestamp() // Use server timestamp
+                };
+
+                // Validate
+                if (!newReview.name || !newReview.rating || !newReview.comment) {
+                    throw new Error("Please fill out all fields.");
+                }
+
+                // Add document to Firestore
+                await addDoc(reviewsCollection, newReview);
+
+                // Success
+                showFormStatus('Thank you for your review!', 'text-green-500');
+                reviewForm.reset();
+                
+                // Clear stars (by unchecking radio buttons)
+                document.querySelectorAll('.star-rating input').forEach(radio => radio.checked = false);
+
+
+            } catch (error) {
+                console.error("Error adding review: ", error);
+                showFormStatus(`Error: ${error.message}`, 'text-red-500');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Review';
+                // Hide status message after 3 seconds
+                setTimeout(() => {
+                    formStatus.classList.add('hidden');
+                }, 3000);
+            }
+        }
+
+        function renderReviews(reviews) {
+            // Clear current list
+            reviewsList.innerHTML = '';
+
+            if (reviews.length === 0) {
+                reviewsList.innerHTML = '<p class="text-center text-gray-400">Be the first to leave a review!</p>';
+                return;
+            }
+
+            reviews.forEach(data => {
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'bg-brand-medium rounded-lg shadow-lg p-6 border-l-4 border-brand-amber';
+                
+                // Format date (e.g., "Oct 25, 2025")
+                const date = data.createdAt.toDate().toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+
+                // Generate star HTML
+                let stars = '';
+                for(let i = 1; i <= 5; i++) {
+                    stars += `<span class="${i <= data.rating ? 'text-brand-amber' : 'text-gray-600'} text-2xl">★</span>`;
+                }
+
+                reviewCard.innerHTML = `
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="text-xl font-semibold text-white">${data.name}</h3>
+                        <span class="text-sm text-gray-400">${date}</span>
+                    </div>
+                    <div class="mb-3">${stars}</div>
+                    <p class="text-gray-300 whitespace-pre-wrap">${data.comment}</p>
+                `;
+                reviewsList.appendChild(reviewCard);
+            });
+        }
+        
+        function showFormStatus(message, colorClass) {
+            formStatus.textContent = message;
+            formStatus.className = `text-center font-medium ${colorClass}`;
+            formStatus.classList.remove('hidden');
+        }
+
+        // --- 5. RUN APP ---
+        initializeAppLogic();
+
+    </script>
+</body>
+</html>
