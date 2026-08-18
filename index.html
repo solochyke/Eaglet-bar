@@ -56,10 +56,15 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-obsidian/95 backdrop-blur-md border-b border-darkborder transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo Area -->
+            <!-- Logo Area (Ready for <img src="logo.png"> or Vector) -->
             <a href="#home" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-lg bg-goldaccent flex items-center justify-center font-bold text-obsidian text-xl shadow-lg shadow-goldaccent/20 group-hover:scale-105 transition-transform">
-                    <span class="font-extrabold text-obsidian">E</span>
+                <div class="w-12 h-10 rounded-lg bg-obsidian border border-goldaccent/40 flex items-center justify-center shadow-lg shadow-goldaccent/10 group-hover:scale-105 transition-transform p-1 overflow-hidden">
+                    <!-- Replace the img src below with your downloaded logo file name (e.g. logo.png) -->
+                    <img src="logo.png" alt="The Eaglet Logo" class="w-full h-full object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                    <!-- Fallback Vector Icon if logo.png is not found yet -->
+                    <svg viewBox="0 0 240 140" class="w-full h-full" style="display:none;">
+                        <path fill="#facc15" d="M15,95 C32,80 55,68 78,53 C87,47 96,40 105,33 C108,30 111,26 114,22 C117,18 120,14 123,10 C124.5,8 126,6 127.5,4 C129,6 130.5,8 132,10 C135,14 138,18 141,22 C144,26 147,30 150,33 C159,40 168,47 177,53 C200,68 223,80 240,95 C222,94 203,91 185,86 C163,80 142,72 120,60 C98,72 77,80 55,86 C37,91 18,94 15,95 Z"/>
+                    </svg>
                 </div>
                 <div class="flex flex-col">
                     <span class="font-bold text-lg tracking-wider text-white group-hover:text-goldaccent transition-colors">THE EAGLET</span>
@@ -79,9 +84,10 @@
 
             <!-- Header Action Buttons -->
             <div class="hidden md:flex items-center gap-4">
-                <a href="tel:+2348064921961" class="text-xs font-semibold text-gray-300 flex items-center gap-2 hover:text-goldaccent transition-colors">
-                    <i class="fa-solid fa-phone text-goldaccent"></i> +234 806 492 1961
-                </a>
+                <div class="flex flex-col text-right">
+                    <a href="tel:+2348064921961" class="text-xs font-semibold text-gray-300 hover:text-goldaccent transition-colors">+234 806 492 1961</a>
+                    <a href="tel:+2349160959954" class="text-xs font-semibold text-gray-300 hover:text-goldaccent transition-colors">+234 916 095 9954</a>
+                </div>
                 <a href="#booking" class="bg-goldaccent hover:bg-goldhover text-obsidian px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-goldaccent/20 transition-all hover:scale-105">
                     Book Room
                 </a>
@@ -636,8 +642,13 @@
                 
                 <div class="space-y-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-lg bg-goldaccent flex items-center justify-center font-bold text-obsidian text-lg">
-                            E
+                        <div class="w-10 h-10 rounded-lg bg-obsidian border border-goldaccent/40 flex items-center justify-center p-1 overflow-hidden">
+                            <!-- Replace the img src below with your downloaded logo file name (e.g. logo.png) -->
+                            <img src="logo.png" alt="The Eaglet Logo" class="w-full h-full object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                            <!-- Fallback Vector Icon if logo.png is not found yet -->
+                            <svg viewBox="0 0 240 140" class="w-full h-full" style="display:none;">
+                                <path fill="#facc15" d="M15,95 C32,80 55,68 78,53 C87,47 96,40 105,33 C108,30 111,26 114,22 C117,18 120,14 123,10 C124.5,8 126,6 127.5,4 C129,6 130.5,8 132,10 C135,14 138,18 141,22 C144,26 147,30 150,33 C159,40 168,47 177,53 C200,68 223,80 240,95 C222,94 203,91 185,86 C163,80 142,72 120,60 C98,72 77,80 55,86 C37,91 18,94 15,95 Z"/>
+                            </svg>
                         </div>
                         <span class="font-bold text-lg tracking-wider text-white">THE EAGLET</span>
                     </div>
