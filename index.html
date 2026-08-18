@@ -1,521 +1,772 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-R8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eaglet Bar - Welcome</title>
-    <!-- Load Tailwind CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iglet Bar & Accommodation | Ultimate Nightlife & Cozy Lodging</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configure Tailwind -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
                     colors: {
-                        'brand-amber': '#f59e0b', // amber-500
-                        'brand-dark': '#111827', // gray-900
-                        'brand-medium': '#1f2937', // gray-800
-                        'brand-light': '#374151', // gray-700
+                        obsidian: '#0b0b0b',
+                        darkcard: '#121212',
+                        darkborder: '#222222',
+                        goldaccent: '#facc15',
+                        goldhover: '#eab308',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Montserrat', 'sans-serif'],
                     }
-                },
-            },
-        };
+                }
+            }
+        }
     </script>
-    <!-- Custom CSS for the star rating -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Hide the actual radio buttons */
-        .star-rating input[type="radio"] {
-            display: none;
+        body {
+            background-color: #0b0b0b;
+            color: #f3f4f6;
+            font-family: 'Poppins', sans-serif;
         }
-
-        /* Style the star labels */
-        .star-rating label {
-            font-size: 2.5rem; /* Large, easy-to-tap stars */
-            color: #4b5563; /* gray-600 */
-            cursor: pointer;
-            transition: color 0.2s ease-in-out;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        /* * This is the magic:
-         * 1. `input:checked ~ label`: Colors all stars (labels) that come *after* the checked radio button.
-         * 2. `label:hover`: Colors the star being hovered.
-         * 3. `label:hover ~ label`: Colors all stars (labels) that come *after* the hovered star.
-         * Since the HTML is in reverse order (5 to 1), this creates the "fill" effect.
-        */
-        .star-rating input[type="radio"]:checked ~ label,
-        .star-rating label:hover,
-        .star-rating label:hover ~ label {
-            color: #f59e0b; /* brand-amber */
+        ::-webkit-scrollbar-track {
+            background: #0b0b0b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222222;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #facc15;
         }
     </style>
 </head>
-<body class="bg-brand-dark text-gray-200 font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-obsidian text-gray-100 antialiased selection:bg-goldaccent selection:text-obsidian">
 
-    <!-- Header & Navigation -->
-    <header class="bg-brand-medium shadow-lg sticky top-0 z-50">
-        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo/Brand Name -->
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-bold text-white">
-                        <!-- Simple SVG for a wing/feather icon -->
-                        <svg class="inline-block h-8 w-8 -mt-1 text-brand-amber" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.092 1.21-.138 2.43-.138 3.662 0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.092-1.21.138-2.43.138-3.662z" />
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9c0 .097.023.19.067.275 0 .097.023.19.067.275v.55a.75.75 0 0 1-1.5 0v-.55c0-.097.023-.19.067-.275 0-.097.023-.19.067-.275a.75.75 0 1 1 1.398 0c0 .097.023.19.067.275Z" />
-                        </svg>
-                        Eaglet Bar
-                    </span>
+    <!-- Header & Sticky Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-obsidian/95 backdrop-blur-md border-b border-darkborder transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo Area -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-goldaccent flex items-center justify-center font-bold text-obsidian text-xl shadow-lg shadow-goldaccent/20 group-hover:scale-105 transition-transform">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230b0b0b'><path d='M2 20h20v-2H2v2m2-4h16V4H4v12Z'/></svg>" alt="Iglet Logo" class="w-6 h-6 hidden">
+                    <span class="font-extrabold text-obsidian">I</span>
                 </div>
-                <!-- Navigation Links -->
-                <div class="hidden sm:block sm:ml-6">
-                    <div class="flex space-x-4">
-                        <a href="#" id="nav-home" class="nav-link px-3 py-2 rounded-md text-sm font-medium" data-page="home">Home</a>
-                        <a href="#" id="nav-menu" class="nav-link px-3 py-2 rounded-md text-sm font-medium" data-page="menu">Menu</a>
-                        <a href="#" id="nav-reviews" class="nav-link px-3 py-2 rounded-md text-sm font-medium" data-page="reviews">Reviews</a>
-                    </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg tracking-wider text-white group-hover:text-goldaccent transition-colors">IGLET</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">Bar & Accommodation</span>
                 </div>
-                <!-- Mobile Menu Button (Optional, simple nav is fine for 3 items) -->
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#home" class="text-goldaccent transition-colors hover:text-goldaccent">Home</a>
+                <a href="#menu" class="text-gray-300 hover:text-goldaccent transition-colors">Bar & Menu</a>
+                <a href="#rooms" class="text-gray-300 hover:text-goldaccent transition-colors">Accommodation</a>
+                <a href="#about" class="text-gray-300 hover:text-goldaccent transition-colors">About</a>
+                <a href="#contact" class="text-gray-300 hover:text-goldaccent transition-colors">Contact</a>
+            </nav>
+
+            <!-- Header Action Buttons -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:+2348064921961" class="text-xs font-semibold text-gray-300 flex items-center gap-2 hover:text-goldaccent transition-colors">
+                    <i class="fa-solid fa-phone text-goldaccent"></i> +234 806 492 1961
+                </a>
+                <a href="#booking" class="bg-goldaccent hover:bg-goldhover text-obsidian px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-goldaccent/20 transition-all hover:scale-105">
+                    Book Room
+                </a>
             </div>
-        </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-toggle" class="md:hidden text-gray-300 hover:text-goldaccent focus:outline-none p-2" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkcard border-b border-darkborder px-6 py-6 space-y-4 shadow-2xl">
+            <a href="#home" class="block text-goldaccent font-medium text-lg mobile-link">Home</a>
+            <a href="#menu" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Bar & Menu</a>
+            <a href="#rooms" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Accommodation</a>
+            <a href="#about" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">About</a>
+            <a href="#contact" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Contact</a>
+            <div class="pt-4 border-t border-darkborder flex flex-col gap-4">
+                <a href="tel:+2348064921961" class="text-sm font-semibold text-gray-300 flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-goldaccent"></i> +234 806 492 1961
+                </a>
+                <a href="#booking" class="bg-goldaccent text-obsidian text-center py-3 rounded-lg font-bold shadow-lg mobile-link">
+                    Book Room Now
+                </a>
+            </div>
+        </div>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="flex-grow">
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden flex items-center min-h-screen">
+        <!-- Background Glow & Imagery overlay -->
+        <div class="absolute inset-0 z-0 opacity-40 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-500/20 via-obsidian to-obsidian"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-goldaccent/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <!-- Page: Home -->
-        <section id="home-page" class="page-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-                Welcome to <span class="text-brand-amber">Eaglet Bar</span>
-            </h1>
-            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                Your new favorite spot for classic cocktails, craft beers, and good times.
-                Relax, unwind, and discover your next great drink.
-            </p>
-            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                <button id="cta-menu" class="nav-link bg-brand-amber text-brand-dark font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-amber-400 transition duration-300 text-lg" data-page="menu">
-                    See The Menu
-                </button>
-                <button id="cta-reviews" class="nav-link bg-brand-light text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300 text-lg" data-page="reviews">
-                    Leave a Review
-                </button>
-            </div>
-        </section>
-
-        <!-- Page: Menu -->
-        <section id="menu-page" class="page-content max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 hidden">
-            <h1 class="text-4xl font-extrabold text-white text-center mb-12">
-                Our <span class="text-brand-amber">Drinks</span>
-            </h1>
-
-            <div class="space-y-12">
-                <!-- Menu Section: Signature Cocktails -->
-                <div>
-                    <h2 class="text-3xl font-bold text-brand-amber border-b-2 border-brand-light pb-2 mb-6">
-                        Signature Cocktails
-                    </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                        <div class="menu-item">
-                            <h3 class="text-xl font-semibold text-white">Eaglet Old Fashioned</h3>
-                            <p class="text-gray-400">Smoked bourbon, brown sugar, angostura bitters, orange peel.</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-darkcard border border-darkborder text-goldaccent text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-bolt text-goldaccent"></i> Welcome to the Ultimate Nightlife Hub
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Experience Luxury, <br class="hidden sm:inline">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-goldaccent via-yellow-400 to-yellow-600">Nightlife & Cozy Lodging</span>
+                    </h1>
+                    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                        Indulge in premium cocktails, electrifying vibes, and tranquil executive rooms designed for your ultimate comfort and relaxation.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#rooms" class="w-full sm:w-auto bg-goldaccent hover:bg-goldhover text-obsidian font-bold px-8 py-4 rounded-xl shadow-xl shadow-goldaccent/20 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-bed"></i> Explore Rooms
+                        </a>
+                        <a href="#menu" class="w-full sm:w-auto bg-darkcard hover:bg-darkborder border border-darkborder text-white font-semibold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-martini-glass-citrus text-goldaccent"></i> View Bar Menu
+                        </a>
+                    </div>
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-darkborder/60 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-goldaccent">24/7</p>
+                            <p class="text-xs text-gray-400 mt-1">Bar & Room Service</p>
                         </div>
-                        <div class="menu-item">
-                            <h3 class="text-xl font-semibold text-white">Amber Negroni</h3>
-                            <p class="text-gray-400">Local gin, Campari, sweet vermouth, grapefruit twist.</p>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-goldaccent">100%</p>
+                            <p class="text-xs text-gray-400 mt-1">Security & Comfort</p>
                         </div>
-                        <div class="menu-item">
-                            <h3 class="text-xl font-semibold text-white">Sky-High Sour</h3>
-                            <p class="text-gray-400">Whiskey, fresh lemon, simple syrup, egg white, red wine float.</p>
-                        </div>
-                        <div class="menu-item">
-                            <h3 class="text-xl font-semibold text-white">Midnight Espresso</h3>
-                            <p class="text-gray-400">Vodka, cold brew liqueur, fresh espresso, vanilla.</p>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-goldaccent">Top-Tier</p>
+                            <p class="text-xs text-gray-400 mt-1">Cocktails & Spirits</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Menu Section: Beer & Wine -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div>
-                        <h2 class="text-3xl font-bold text-brand-amber border-b-2 border-brand-light pb-2 mb-6">
-                            Craft Beer
-                        </h2>
-                        <ul class="space-y-3 text-gray-300">
-                            <li>Local IPA - Hazy & Juicy</li>
-                            <li>Classic Pilsner - Crisp & Clean</li>
-                            <li>Dark Stout - Rich & Roasty</li>
-                            <li>Rotating Sour - Ask your server!</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 class="text-3xl font-bold text-brand-amber border-b-2 border-brand-light pb-2 mb-6">
-                            Wine
-                        </h2>
-                        <ul class="space-y-3 text-gray-300">
-                            <li>Cabernet Sauvignon - Full-bodied Red</li>
-                            <li>Pinot Grigio - Light & Zesty White</li>
-                            <li>Rosé - Dry & Refreshing</li>
-                            <li>Prosecco - Bubbly & Fun</li>
-                        </ul>
+                <!-- Hero Visual Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-goldaccent to-yellow-600 opacity-30 blur-lg"></div>
+                        <div class="relative rounded-2xl bg-darkcard border border-darkborder overflow-hidden shadow-2xl p-4 sm:p-6 space-y-4">
+                            <!-- Simulated Image Frame -->
+                            <div class="relative h-64 sm:h-72 rounded-xl overflow-hidden bg-gradient-to-br from-gray-900 to-obsidian flex items-center justify-center">
+                                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-60"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
+                                <div class="absolute bottom-4 left-4 right-4 bg-obsidian/80 backdrop-blur-md p-4 rounded-xl border border-darkborder flex items-center justify-between">
+                                    <div>
+                                        <p class="text-xs text-goldaccent font-semibold uppercase">Featured Suite</p>
+                                        <p class="text-sm font-bold text-white">Iglet Royal VIP Suite</p>
+                                    </div>
+                                    <span class="bg-goldaccent text-obsidian text-xs font-bold px-3 py-1 rounded-full">₦45,000/night</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between text-sm text-gray-300 pt-2">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-wifi text-goldaccent"></i> High-Speed WiFi</span>
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-snowflake text-goldaccent"></i> Fully Air-Conditioned</span>
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-goldaccent"></i> Secure Parking</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Page: Reviews -->
-        <section id="reviews-page" class="page-content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 hidden">
-            <h1 class="text-4xl font-extrabold text-white text-center mb-6">
-                What <span class="text-brand-amber">People Are Saying</span>
-            </h1>
-
-            <!-- Average Rating Display -->
-            <div class="bg-brand-medium rounded-lg shadow-xl p-6 mb-10 text-center">
-                <h2 class="text-2xl font-bold text-white mb-2">Overall Rating</h2>
-                <div id="average-rating-display" class="text-5xl font-extrabold text-brand-amber">
-                    <span class="loading-dots">...</span>
-                </div>
-                <p class="text-gray-400 mt-2">Based on <span id="review-count">0</span> reviews</p>
+    <!-- Bar & Drinks Section -->
+    <section id="menu" class="py-24 bg-darkcard/40 border-t border-darkborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-goldaccent text-xs font-bold uppercase tracking-widest bg-darkcard border border-darkborder px-4 py-1.5 rounded-full inline-block">
+                    Exquisite Taste & Vibe
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">The Iglet Bar & Lounge Menu</h2>
+                <p class="text-gray-400 text-sm sm:text-base">
+                    Step into our vibrant atmosphere. Whether you are craving signature cocktails, chilled premium beers, fine wine, or savoury snacks, our bar is stocked to perfection.
+                </p>
             </div>
 
-            <!-- Review Submission Form -->
-            <div class="bg-brand-medium rounded-lg shadow-xl p-6 md:p-8 mb-12">
-                <h2 class="text-2xl font-bold text-white mb-6">Leave Your Review</h2>
-                <form id="review-form" class="space-y-6">
-                    <div>
-                        <label for="reviewer-name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
-                        <input type="text" id="reviewer-name" name="name" class="w-full bg-brand-light text-white border-brand-light rounded-lg shadow-sm focus:ring-brand-amber focus:border-brand-amber" placeholder="What should we call you?" required>
+            <!-- Menu Grid Categories -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Signature Cocktails -->
+                <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-martini-glass-citrus"></i>
+                        </div>
+                        <span class="text-xs font-bold text-goldaccent uppercase bg-obsidian px-3 py-1 rounded-full border border-darkborder">Popular</span>
                     </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Signature Cocktails</h3>
+                    <p class="text-gray-400 text-xs mb-6">Handcrafted mixes designed by expert mixologists to spark your night.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start border-b border-darkborder pb-3">
+                            <div>
+                                <p class="font-semibold text-sm text-white">Iglet Gold Rush</p>
+                                <p class="text-xs text-gray-400">Bourbon, honey syrup, fresh lemon, gold dust garnish.</p>
+                            </div>
+                            <span class="font-bold text-goldaccent text-sm">₦4,500</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-darkborder pb-3">
+                            <div>
+                                <p class="font-semibold text-sm text-white">Electric Obsidian</p>
+                                <p class="text-xs text-gray-400">Tequila, blue curaçao, lime, blackberry liqueur.</p>
+                            </div>
+                            <span class="font-bold text-goldaccent text-sm">₦5,000</span>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="font-semibold text-sm text-white">Midnight Sunset</p>
+                                <p class="text-xs text-gray-400">White rum, grenadine, pineapple juice, coconut cream.</p>
+                            </div>
+                            <span class="font-bold text-goldaccent text-sm">₦4,000</span>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Category 2: Beers & Spirits -->
+                <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-beer-mug-empty"></i>
+                        </div>
+                        <span class="text-xs font-bold text-goldaccent uppercase bg-obsidian px-3 py-1 rounded-full border border-darkborder">Ice Cold</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Beers & Spirits</h3>
+                    <p class="text-gray-400 text-xs mb-6">Ice-cold local & imported beers, cognacs, whiskey, and champagne.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start border-b border-darkborder pb-3">
+                            <div>
+                                <p class="font-semibold text-sm text-white">Premium Lager (Bottle)</p>
+                                <p class="text-xs text-gray-400">Chilled to absolute perfection.</p>
+                            </div>
+                            <span class="font-bold text-goldaccent text-sm">₦1,500</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-darkborder pb-3">
+                            <div>
+                                <p class="font-semibold text-sm text-white">Hennessy VSOP (Bottle)</p>
+                                <p class="text-xs text-gray-400">Smooth, refined cognacs for high rollers.</p>
+                            </div>
+                            <span class="font-bold text-goldaccent text-sm">₦65,000</span>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="font-semibold text-sm text-white">Jameson Irish Whiskey</p>
+                                <p class="text-xs text-gray-400">Triple distilled, rich and smooth.</p>
+                            </div>
+                            <span class="font-bold text-goldaccent text-sm">₦28,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Grill & Snacks -->
+                <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <span class="text-xs font-bold text-goldaccent uppercase bg-obsidian px-3 py-1 rounded-full border border-darkborder">Fresh & Hot</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Grills & Bar Bites</h3>
+                    <p class="text-gray-400 text-xs mb-6">Savoury small chops, spicy grilled fish, and chicken wings.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start border-b border-darkborder pb-3">
+                            <div>
+                                <p class="font-semibold text-sm text-white">Spicy Grilled Catfish / Tilapia</p>
+                                <p class="text-xs text-gray-400">Served with plantain & special pepper sauce.</p>
+                            </div>
+                            <span class="font-bold text-goldaccent text-sm">₦12,000</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-darkborder pb-3">
+                            <div>
+                                <p class="font-semibold text-sm text-white">Honey BBQ Wings (6 pcs)</p>
+                                <p class="text-xs text-gray-400">Crispy wings glazed in sticky honey BBQ sauce.</p>
+                            </div>
+                            <span class="font-bold text-goldaccent text-sm">₦5,500</span>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="font-semibold text-sm text-white">Assorted Small Chops Platter</p>
+                                <p class="text-xs text-gray-400">Spring rolls, samosas, puff-puff, gizzard.</p>
+                            </div>
+                            <span class="font-bold text-goldaccent text-sm">₦4,500</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bar Atmosphere Callout -->
+            <div class="mt-16 bg-gradient-to-r from-darkcard to-obsidian border border-darkborder rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 text-center md:text-left">
+                    <h4 class="text-xl font-bold text-white">Ready for an unforgettable night?</h4>
+                    <p class="text-gray-400 text-sm">Enjoy live DJ sets on weekends, football match screenings, and VIP booth reservations.</p>
+                </div>
+                <a href="https://wa.me/2348064921961?text=Hello%20Iglet%20Bar,%20I%20would%20like%20to%20make%20a%20table%20reservation." target="_blank" class="bg-goldaccent hover:bg-goldhover text-obsidian px-6 py-3 rounded-xl font-bold text-sm shadow-lg whitespace-nowrap transition-transform hover:scale-105 flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Order Drinks / Reserve Table
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodation / Rooms Section -->
+    <section id="rooms" class="py-24 border-t border-darkborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-goldaccent text-xs font-bold uppercase tracking-widest bg-darkcard border border-darkborder px-4 py-1.5 rounded-full inline-block">
+                    Cozy & Peaceful Lodging
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Our Exclusive Rooms & Suites</h2>
+                <p class="text-gray-400 text-sm sm:text-base">
+                    After an electric night at the bar, retreat into supreme comfort. Choose from our carefully curated room options designed for your ultimate relaxation.
+                </p>
+            </div>
+
+            <!-- 3 Distinct Room Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Room 1: Standard Cozy Suite -->
+                <div class="bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-goldaccent/50 transition-all group">
                     <div>
-                        <label class="block text-sm font-medium text-gray-300 mb-2">Your Rating</label>
-                        <!-- Star Rating Input -->
-                        <!-- Inputs are in reverse order to make the CSS `~` selector work -->
-                        <div class="star-rating flex flex-row-reverse justify-end items-center" dir="ltr">
-                            <input type="radio" id="star5" name="rating" value="5" required /><label for="star5">★</label>
-                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4">★</label>
-                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3">★</label>
-                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2">★</label>
-                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1">★</label>
+                        <!-- Image Placeholder -->
+                        <div class="relative h-56 bg-gradient-to-br from-gray-800 to-obsidian overflow-hidden">
+                            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500 opacity-70"></div>
+                            <div class="absolute top-4 right-4 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent font-bold text-xs">
+                                Standard
+                            </div>
+                        </div>
+                        <!-- Content -->
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-white">Standard Cozy Suite</h3>
+                                <div class="text-right">
+                                    <span class="text-goldaccent font-extrabold text-lg">₦20,000</span>
+                                    <span class="text-xs text-gray-400 block">per night</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 text-xs">
+                                Comfortable, affordable, and fitted with all essential amenities for a restful night away from home.
+                            </p>
+                            <!-- Amenities List -->
+                            <div class="grid grid-cols-3 gap-2 pt-2 border-t border-darkborder text-xs text-gray-300">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-snowflake text-goldaccent"></i> AC</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-wifi text-goldaccent"></i> WiFi</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-tv text-goldaccent"></i> Smart TV</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Action Button -->
+                    <div class="p-6 pt-0">
+                        <button onclick="selectRoom('Standard Cozy Suite', 20000)" class="w-full bg-obsidian hover:bg-goldaccent border border-darkborder hover:border-goldaccent text-white hover:text-obsidian py-3 rounded-xl font-bold text-sm transition-all shadow-md flex items-center justify-center gap-2">
+                            Book This Room
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Room 2: Executive Deluxe Room -->
+                <div class="bg-darkcard border border-goldaccent/60 rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between transform md:-translate-y-2 group">
+                    <!-- Featured Badge Ribbon -->
+                    <div class="absolute top-0 right-0 z-20 bg-goldaccent text-obsidian text-[10px] font-extrabold px-4 py-1 rounded-bl-xl uppercase tracking-wider shadow-md">
+                        Most Popular
+                    </div>
+                    <div>
+                        <!-- Image Placeholder -->
+                        <div class="relative h-56 bg-gradient-to-br from-gray-800 to-obsidian overflow-hidden">
+                            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500 opacity-70"></div>
+                        </div>
+                        <!-- Content -->
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-white">Executive Deluxe Room</h3>
+                                <div class="text-right">
+                                    <span class="text-goldaccent font-extrabold text-lg">₦32,000</span>
+                                    <span class="text-xs text-gray-400 block">per night</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 text-xs">
+                                Spacious environment featuring a premium queen-size bed, contemporary modern decor, and work desk.
+                            </p>
+                            <!-- Amenities List -->
+                            <div class="grid grid-cols-3 gap-2 pt-2 border-t border-darkborder text-xs text-gray-300">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-snowflake text-goldaccent"></i> AC</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-wifi text-goldaccent"></i> Fast WiFi</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-mug-hot text-goldaccent"></i> Room Service</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Action Button -->
+                    <div class="p-6 pt-0">
+                        <button onclick="selectRoom('Executive Deluxe Room', 32000)" class="w-full bg-goldaccent hover:bg-goldhover text-obsidian py-3 rounded-xl font-bold text-sm transition-all shadow-lg flex items-center justify-center gap-2">
+                            Book This Room
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Room 3: Iglet Royal VIP Suite -->
+                <div class="bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-goldaccent/50 transition-all group">
+                    <div>
+                        <!-- Image Placeholder -->
+                        <div class="relative h-56 bg-gradient-to-br from-gray-800 to-obsidian overflow-hidden">
+                            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500 opacity-70"></div>
+                            <div class="absolute top-4 right-4 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent font-bold text-xs">
+                                Ultimate Luxury
+                            </div>
+                        </div>
+                        <!-- Content -->
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-xl font-bold text-white">Iglet Royal VIP Suite</h3>
+                                <div class="text-right">
+                                    <span class="text-goldaccent font-extrabold text-lg">₦45,000</span>
+                                    <span class="text-xs text-gray-400 block">per night</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 text-xs">
+                                Ultimate luxury boasting a king-size bed, private lounge view, mini bar fridge, and premium luxury bath.
+                            </p>
+                            <!-- Amenities List -->
+                            <div class="grid grid-cols-3 gap-2 pt-2 border-t border-darkborder text-xs text-gray-300">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-crown text-goldaccent"></i> VIP Perks</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-wifi text-goldaccent"></i> Fast WiFi</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-wine-glass text-goldaccent"></i> Mini Bar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Action Button -->
+                    <div class="p-6 pt-0">
+                        <button onclick="selectRoom('Iglet Royal VIP Suite', 45000)" class="w-full bg-obsidian hover:bg-goldaccent border border-darkborder hover:border-goldaccent text-white hover:text-obsidian py-3 rounded-xl font-bold text-sm transition-all shadow-md flex items-center justify-center gap-2">
+                            Book This Room
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Instant Reservation / Booking System Section -->
+    <section id="booking" class="py-24 bg-darkcard/40 border-t border-darkborder relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-12">
+                <span class="text-goldaccent text-xs font-bold uppercase tracking-widest bg-darkcard border border-darkborder px-4 py-1.5 rounded-full inline-block">
+                    Instant WhatsApp Reservation
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Book Your Stay Instantly</h2>
+                <p class="text-gray-400 text-sm">
+                    Select your preferred room and dates below. Submitting this form will automatically open WhatsApp with your pre-formatted booking details sent directly to management.
+                </p>
+            </div>
+
+            <!-- Booking Interactive Form -->
+            <div class="bg-darkcard border border-darkborder rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <form id="booking-form" onsubmit="submitBooking(event)" class="space-y-6">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Room Selection -->
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300">Select Room <span class="text-goldaccent">*</span></label>
+                            <select id="room-select" required class="w-full bg-obsidian border border-darkborder text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-goldaccent transition-colors">
+                                <option value="" disabled selected>-- Choose Your Room --</option>
+                                <option value="Standard Cozy Suite">Standard Cozy Suite (₦20,000/night)</option>
+                                <option value="Executive Deluxe Room">Executive Deluxe Room (₦32,000/night)</option>
+                                <option value="Iglet Royal VIP Suite">Iglet Royal VIP Suite (₦45,000/night)</option>
+                            </select>
+                        </div>
+
+                        <!-- Number of Guests -->
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300">Number of Guests <span class="text-goldaccent">*</span></label>
+                            <select id="guests-select" required class="w-full bg-obsidian border border-darkborder text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-goldaccent transition-colors">
+                                <option value="1 Guest">1 Guest</option>
+                                <option value="2 Guests" selected>2 Guests</option>
+                                <option value="3 Guests">3 Guests</option>
+                                <option value="4+ Guests">4+ Guests (VIP Suite Recommended)</option>
+                            </select>
                         </div>
                     </div>
 
-                    <div>
-                        <label for="reviewer-comment" class="block text-sm font-medium text-gray-300 mb-2">Your Comments</label>
-                        <textarea id="reviewer-comment" name="comment" rows="4" class="w-full bg-brand-light text-white border-brand-light rounded-lg shadow-sm focus:ring-brand-amber focus:border-brand-amber" placeholder="Tell us about your experience..." required></textarea>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Check-in Date -->
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300">Check-in Date <span class="text-goldaccent">*</span></label>
+                            <input type="date" id="checkin-date" required class="w-full bg-obsidian border border-darkborder text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-goldaccent transition-colors">
+                        </div>
+
+                        <!-- Check-out Date -->
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300">Check-out Date <span class="text-goldaccent">*</span></label>
+                            <input type="date" id="checkout-date" required class="w-full bg-obsidian border border-darkborder text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-goldaccent transition-colors">
+                        </div>
                     </div>
 
-                    <!-- Form Status Message -->
-                    <div id="form-status" class="text-center font-medium hidden"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300">Full Name <span class="text-goldaccent">*</span></label>
+                            <input type="text" id="guest-name" placeholder="e.g. John Doe" required class="w-full bg-obsidian border border-darkborder text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-goldaccent transition-colors">
+                        </div>
 
-                    <button type="submit" id="submit-review-btn" class="w-full bg-brand-amber text-brand-dark font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-amber-400 transition duration-300 text-lg">
-                        Submit Review
+                        <!-- Phone Number -->
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300">Phone Number (WhatsApp) <span class="text-goldaccent">*</span></label>
+                            <input type="tel" id="guest-phone" placeholder="e.g. +234 800 000 0000" required class="w-full bg-obsidian border border-darkborder text-white rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-goldaccent transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Special Requests -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300">Special Requests or Notes (Optional)</label>
+                        <textarea id="guest-notes" rows="3" placeholder="e.g. Early check-in requested, extra pillows..." class="w-full bg-obsidian border border-darkborder text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-goldaccent transition-colors"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-goldaccent hover:bg-goldhover text-obsidian py-4 rounded-xl font-extrabold text-base shadow-xl shadow-goldaccent/20 transition-all transform hover:scale-[1.01] flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Complete Booking via WhatsApp
                     </button>
+                    
+                    <p class="text-center text-xs text-gray-400 flex items-center justify-center gap-1.5 pt-2">
+                        <i class="fa-solid fa-lock text-goldaccent"></i> Secure & Instant Booking Process. No prepayment required online.
+                    </p>
                 </form>
             </div>
+        </div>
+    </section>
 
-            <!-- Review Display List -->
-            <h2 class="text-3xl font-bold text-white text-center mb-8">
-                Recent <span class="text-brand-amber">Reviews</span>
-            </h2>
-            <div id="reviews-list" class="space-y-6">
-                <!-- Loading state -->
-                <p id="reviews-loading" class="text-center text-gray-400 text-lg">Loading reviews...</p>
-                <!-- Reviews will be injected here by JavaScript -->
+    <!-- About Section -->
+    <section id="about" class="py-24 border-t border-darkborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-goldaccent text-xs font-bold uppercase tracking-widest bg-darkcard border border-darkborder px-4 py-1.5 rounded-full inline-block">
+                        About Iglet Bar & Hotel
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Your Premier Destination for Entertainment & Hospitality
+                    </h2>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        Established to redefine nightlife and executive lodging, <strong class="text-white">Iglet Bar & Accommodation</strong> combines high-energy nightlife entertainment with peaceful, secure, and impeccably clean lodging facilities. 
+                    </p>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        Whether you're unwinding after a long workday with our signature cocktails or seeking a cozy weekend retreat, our dedicated team ensures your stay is nothing short of exceptional.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="bg-darkcard border border-darkborder p-4 rounded-xl">
+                            <p class="text-goldaccent font-bold text-lg mb-1">Prime Vibe</p>
+                            <p class="text-xs text-gray-400">Great music, secure parking, and electric atmosphere.</p>
+                        </div>
+                        <div class="bg-darkcard border border-darkborder p-4 rounded-xl">
+                            <p class="text-goldaccent font-bold text-lg mb-1">Absolute Comfort</p>
+                            <p class="text-xs text-gray-400">Clean, serene rooms equipped with modern amenities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-3xl overflow-hidden border border-darkborder shadow-2xl bg-darkcard p-3">
+                        <div class="h-96 rounded-2xl bg-[url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"></div>
+                    </div>
+                </div>
+
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- Contact & Footer Integration -->
+    <footer id="contact" class="bg-darkcard border-t border-darkborder pt-20 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-darkborder">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-goldaccent flex items-center justify-center font-bold text-obsidian text-lg">
+                            I
+                        </div>
+                        <span class="font-bold text-lg tracking-wider text-white">IGLET</span>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        The ultimate spot for nightlife, exquisite drinks, cocktails, and cozy executive lodging.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-obsidian border border-darkborder flex items-center justify-center text-gray-300 hover:text-goldaccent hover:border-goldaccent transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-obsidian border border-darkborder flex items-center justify-center text-gray-300 hover:text-goldaccent hover:border-goldaccent transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-obsidian border border-darkborder flex items-center justify-center text-gray-300 hover:text-goldaccent hover:border-goldaccent transition-all"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://wa.me/2348064921961" target="_blank" class="w-9 h-9 rounded-lg bg-obsidian border border-darkborder flex items-center justify-center text-gray-300 hover:text-goldaccent hover:border-goldaccent transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
 
-    <!-- Footer -->
-    <footer class="bg-brand-medium mt-16 shadow-inner">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-500">
-            <p>&copy; <span id="footer-year"></span> Eaglet Bar. All rights reserved.</p>
+                <!-- Col 2: Quick Links -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase">Quick Links</h4>
+                    <ul class="space-y-2.5 text-xs text-gray-400">
+                        <li><a href="#home" class="hover:text-goldaccent transition-colors">Home</a></li>
+                        <li><a href="#menu" class="hover:text-goldaccent transition-colors">Bar & Drink Menu</a></li>
+                        <li><a href="#rooms" class="hover:text-goldaccent transition-colors">Accommodation & Rooms</a></li>
+                        <li><a href="#about" class="hover:text-goldaccent transition-colors">About Us</a></li>
+                        <li><a href="#booking" class="hover:text-goldaccent transition-colors">Book a Room</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Operating Hours -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase">Operating Hours</h4>
+                    <ul class="space-y-3 text-xs text-gray-400">
+                        <li class="flex justify-between border-b border-darkborder/50 pb-2">
+                            <span>Bar & Lounge:</span>
+                            <span class="text-white font-medium">Open Daily (24/7 Service)</span>
+                        </li>
+                        <li class="flex justify-between border-b border-darkborder/50 pb-2">
+                            <span>Check-in / Check-out:</span>
+                            <span class="text-white font-medium">24 Hours Service</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Front Desk:</span>
+                            <span class="text-white font-medium">Always Active</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Info -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase">Contact & Location</h4>
+                    <ul class="space-y-3 text-xs text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-goldaccent mt-0.5"></i>
+                            <span>Iglet Avenue, Prime Nightlife District, Nigeria</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-goldaccent"></i>
+                            <a href="tel:+2348064921961" class="text-white font-semibold hover:text-goldaccent transition-colors">+234 806 492 1961</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-goldaccent"></i>
+                            <span>management@igletbarhotel.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 Iglet Bar & Accommodation. All rights reserved.</p>
+                <p class="flex items-center gap-1">Designed with <i class="fa-solid fa-heart text-goldaccent"></i> for Ultimate Guest Experience.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Floating WhatsApp & Quick Action Button -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a href="https://wa.me/2348064921961?text=Hello%20Iglet%20Bar%20%26%20Accommodation,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" aria-label="Chat on WhatsApp" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 group relative">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            <span class="absolute right-16 bg-darkcard text-white text-xs px-3 py-1.5 rounded-lg border border-darkborder shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                Chat on WhatsApp
+            </span>
+        </a>
+    </div>
 
-    <!-- Firebase and App Logic -->
-    <script type="module">
-        // Import Firebase modules
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import {
-            getAuth,
-            signInAnonymously,
-            signInWithCustomToken,
-            onAuthStateChanged
-        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import {
-            getFirestore,
-            collection,
-            addDoc,
-            onSnapshot,
-            serverTimestamp,
-            setLogLevel
-        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        // --- GLOBAL VARIABLES & CONFIG ---
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-        // Get variables from the environment
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
 
-        let db, auth, userId;
+        // Set default date values for booking form (today and tomorrow)
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+
+        const formatDate = (date) => date.toISOString().split('T')[0];
         
-        // Firestore collection path for public data
-        const reviewsCollectionPath = `/artifacts/${appId}/public/data/reviews`;
-        let reviewsCollection;
+        document.getElementById('checkin-date').value = formatDate(today);
+        document.getElementById('checkout-date').value = formatDate(tomorrow);
+        document.getElementById('checkin-date').min = formatDate(today);
 
-        // --- DOM Elements ---
-        const pages = document.querySelectorAll('.page-content');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const reviewForm = document.getElementById('review-form');
-        const reviewsList = document.getElementById('reviews-list');
-        const reviewsLoading = document.getElementById('reviews-loading');
-        const avgRatingDisplay = document.getElementById('average-rating-display');
-        const reviewCountDisplay = document.getElementById('review-count');
-        const formStatus = document.getElementById('form-status');
-        const submitBtn = document.getElementById('submit-review-btn');
-
-        // --- 1. INITIALIZATION ---
-
-        function initializeAppLogic() {
-            try {
-                // Initialize Firebase
-                const app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                auth = getAuth(app);
-                
-                // Enable debug logging
-                setLogLevel('Debug');
-
-                // Set up authentication
-                setupAuthentication();
-
-                // Set up page navigation
-                setupNavigation();
-
-                // Set footer year
-                document.getElementById('footer-year').textContent = new Date().getFullYear();
-
-            } catch (error) {
-                console.error("Error initializing app:", error);
-                reviewsLoading.textContent = "Error loading application. Please try again later.";
+        // Update checkout minimum date when checkin changes
+        document.getElementById('checkin-date').addEventListener('change', function() {
+            const checkinVal = new Date(this.value);
+            const nextDay = new Date(checkinVal);
+            nextDay.setDate(nextDay.getDate() + 1);
+            document.getElementById('checkout-date').min = formatDate(nextDay);
+            if(new Date(document.getElementById('checkout-date').value) <= checkinVal) {
+                document.getElementById('checkout-date').value = formatDate(nextDay);
             }
-        }
+        });
 
-        // --- 2. AUTHENTICATION ---
-
-        function setupAuthentication() {
-            onAuthStateChanged(auth, async (user) => {
-                if (user) {
-                    // User is signed in
-                    userId = user.uid;
-                    console.log("User authenticated:", userId);
-                    
-                    // User is authenticated, now we can safely set up Firestore listeners
-                    setupFirestore();
-
-                } else {
-                    // User is signed out, attempt to sign in
-                    console.log("User not authenticated, attempting sign-in...");
-                    try {
-                        if (initialAuthToken) {
-                            await signInWithCustomToken(auth, initialAuthToken);
-                        } else {
-                            await signInAnonymously(auth);
-                        }
-                    } catch (error) {
-                        console.error("Error signing in:", error);
-                        reviewsLoading.textContent = "Error connecting to review service.";
-                    }
-                }
-            });
-        }
-
-        // --- 3. PAGE NAVIGATION (SPA) ---
-
-        function setupNavigation() {
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const pageId = link.getAttribute('data-page');
-                    showPage(pageId);
-                });
-            });
-
-            // Set default page
-            showPage('home');
-        }
-
-        function showPage(pageId) {
-            // Hide all pages
-            pages.forEach(page => page.classList.add('hidden'));
-
-            // Show the target page
-            const targetPage = document.getElementById(`${pageId}-page`);
-            if (targetPage) {
-                targetPage.classList.remove('hidden');
-            }
-
-            // Update active nav link
-            navLinks.forEach(link => {
-                if (link.getAttribute('data-page') === pageId) {
-                    link.classList.add('bg-brand-dark', 'text-white');
-                    link.classList.remove('text-gray-300', 'hover:bg-brand-light');
-                } else {
-                    link.classList.remove('bg-brand-dark', 'text-white');
-                    link.classList.add('text-gray-300', 'hover:bg-brand-light');
-                }
-            });
-
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-
-        // --- 4. FIRESTORE & REVIEWS ---
-
-        function setupFirestore() {
-            if (!db) {
-                console.error("Firestore DB is not initialized.");
-                return;
-            }
+        // Function triggered when user clicks "Book This Room" on any room card
+        function selectRoom(roomName, price) {
+            const roomSelect = document.getElementById('room-select');
+            roomSelect.value = roomName;
             
-            // Define the collection reference
-            reviewsCollection = collection(db, reviewsCollectionPath);
-
-            // Listen for form submission
-            reviewForm.addEventListener('submit', handleReviewSubmit);
-
-            // Listen for real-time review updates
-            // We sort in memory to avoid needing a Firestore index
-            onSnapshot(reviewsCollection, (snapshot) => {
-                reviewsLoading.classList.add('hidden');
-                
-                let reviews = [];
-                let totalRating = 0;
-
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    // Ensure timestamp exists for sorting
-                    if (data.createdAt) {
-                        reviews.push(data);
-                        totalRating += Number(data.rating);
-                    }
-                });
-
-                // Sort reviews in memory (newest first)
-                reviews.sort((a, b) => b.createdAt.toDate() - a.createdAt.toDate());
-
-                // Render reviews
-                renderReviews(reviews);
-
-                // Update average rating
-                const reviewCount = reviews.length;
-                const avgRating = reviewCount > 0 ? (totalRating / reviewCount).toFixed(1) : 'N/A';
-                
-                avgRatingDisplay.textContent = avgRating;
-                reviewCountDisplay.textContent = reviewCount;
-
-            }, (error) => {
-                console.error("Error getting reviews:", error);
-                reviewsLoading.textContent = "Could not load reviews.";
-            });
+            // Smooth scroll to the booking form section
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+            
+            // Highlight select field briefly
+            roomSelect.classList.add('border-goldaccent', 'ring-2', 'ring-goldaccent/30');
+            setTimeout(() => {
+                roomSelect.classList.remove('border-goldaccent', 'ring-2', 'ring-goldaccent/30');
+            }, 1500);
         }
 
-        async function handleReviewSubmit(e) {
-            e.preventDefault();
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
-            showFormStatus('Submitting your review...', 'text-brand-amber');
+        // WhatsApp Form Submission Handler
+        function submitBooking(event) {
+            event.preventDefault();
 
-            try {
-                const formData = new FormData(reviewForm);
-                const newReview = {
-                    name: formData.get('name'),
-                    rating: Number(formData.get('rating')),
-                    comment: formData.get('comment'),
-                    createdAt: serverTimestamp() // Use server timestamp
-                };
+            const room = document.getElementById('room-select').value;
+            const guests = document.getElementById('guests-select').value;
+            const checkin = document.getElementById('checkin-date').value;
+            const checkout = document.getElementById('checkout-date').value;
+            const name = document.getElementById('guest-name').value;
+            const phone = document.getElementById('guest-phone').value;
+            const notes = document.getElementById('guest-notes').value || 'None';
 
-                // Validate
-                if (!newReview.name || !newReview.rating || !newReview.comment) {
-                    throw new Error("Please fill out all fields.");
-                }
+            // Construct pre-formatted WhatsApp message
+            const message = `*NEW ROOM RESERVATION - IGLET HOTEL*%0A%0A` +
+                            `*Room:* ${room}%0A` +
+                            `*Guests:* ${guests}%0A` +
+                            `*Check-In:* ${checkin}%0A` +
+                            `*Check-Out:* ${checkout}%0A` +
+                            `*Guest Name:* ${name}%0A` +
+                            `*Phone Number:* ${phone}%0A` +
+                            `*Special Requests:* ${notes}%0A%0A` +
+                            `Please confirm availability and booking status. Thank you!`;
 
-                // Add document to Firestore
-                await addDoc(reviewsCollection, newReview);
-
-                // Success
-                showFormStatus('Thank you for your review!', 'text-green-500');
-                reviewForm.reset();
-                
-                // Clear stars (by unchecking radio buttons)
-                document.querySelectorAll('.star-rating input').forEach(radio => radio.checked = false);
-
-
-            } catch (error) {
-                console.error("Error adding review: ", error);
-                showFormStatus(`Error: ${error.message}`, 'text-red-500');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit Review';
-                // Hide status message after 3 seconds
-                setTimeout(() => {
-                    formStatus.classList.add('hidden');
-                }, 3000);
-            }
+            // Business WhatsApp Number
+            const businessNumber = "2348064921961";
+            
+            // Redirect to WhatsApp
+            const whatsappURL = `https://wa.me/${businessNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
         }
-
-        function renderReviews(reviews) {
-            // Clear current list
-            reviewsList.innerHTML = '';
-
-            if (reviews.length === 0) {
-                reviewsList.innerHTML = '<p class="text-center text-gray-400">Be the first to leave a review!</p>';
-                return;
-            }
-
-            reviews.forEach(data => {
-                const reviewCard = document.createElement('div');
-                reviewCard.className = 'bg-brand-medium rounded-lg shadow-lg p-6 border-l-4 border-brand-amber';
-                
-                // Format date (e.g., "Oct 25, 2025")
-                const date = data.createdAt.toDate().toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                });
-
-                // Generate star HTML
-                let stars = '';
-                for(let i = 1; i <= 5; i++) {
-                    stars += `<span class="${i <= data.rating ? 'text-brand-amber' : 'text-gray-600'} text-2xl">★</span>`;
-                }
-
-                reviewCard.innerHTML = `
-                    <div class="flex justify-between items-center mb-3">
-                        <h3 class="text-xl font-semibold text-white">${data.name}</h3>
-                        <span class="text-sm text-gray-400">${date}</span>
-                    </div>
-                    <div class="mb-3">${stars}</div>
-                    <p class="text-gray-300 whitespace-pre-wrap">${data.comment}</p>
-                `;
-                reviewsList.appendChild(reviewCard);
-            });
-        }
-        
-        function showFormStatus(message, colorClass) {
-            formStatus.textContent = message;
-            formStatus.className = `text-center font-medium ${colorClass}`;
-            formStatus.classList.remove('hidden');
-        }
-
-        // --- 5. RUN APP ---
-        initializeAppLogic();
-
     </script>
 </body>
 </html>
