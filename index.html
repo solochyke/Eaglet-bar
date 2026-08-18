@@ -56,21 +56,19 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-obsidian/95 backdrop-blur-md border-b border-darkborder transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo Area (Ready for <img src="logo.png"> or Vector) -->
-            <a href="#home" class="flex items-center gap-3 group">
-                <div class="w-12 h-10 rounded-lg bg-obsidian border border-goldaccent/40 flex items-center justify-center shadow-lg shadow-goldaccent/10 group-hover:scale-105 transition-transform p-1 overflow-hidden">
-                    <!-- Replace the img src below with your downloaded logo file name (e.g. logo.png) -->
+            <!-- Logo Area with Click-to-View Modal Trigger -->
+            <div class="flex items-center gap-3">
+                <button onclick="openLogoModal()" class="w-12 h-10 rounded-lg bg-obsidian border border-goldaccent/40 flex items-center justify-center shadow-lg shadow-goldaccent/10 hover:scale-105 transition-transform p-1 overflow-hidden cursor-pointer focus:outline-none" title="Click to view logo">
                     <img src="logo.png" alt="The Eaglet Logo" class="w-full h-full object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                    <!-- Fallback Vector Icon if logo.png is not found yet -->
                     <svg viewBox="0 0 240 140" class="w-full h-full" style="display:none;">
                         <path fill="#facc15" d="M15,95 C32,80 55,68 78,53 C87,47 96,40 105,33 C108,30 111,26 114,22 C117,18 120,14 123,10 C124.5,8 126,6 127.5,4 C129,6 130.5,8 132,10 C135,14 138,18 141,22 C144,26 147,30 150,33 C159,40 168,47 177,53 C200,68 223,80 240,95 C222,94 203,91 185,86 C163,80 142,72 120,60 C98,72 77,80 55,86 C37,91 18,94 15,95 Z"/>
                     </svg>
-                </div>
-                <div class="flex flex-col">
+                </button>
+                <a href="#home" class="flex flex-col group">
                     <span class="font-bold text-lg tracking-wider text-white group-hover:text-goldaccent transition-colors">THE EAGLET</span>
                     <span class="text-[10px] uppercase tracking-widest text-gray-400 font-semibold">Bar & Hotel</span>
-                </div>
-            </a>
+                </a>
+            </div>
 
             <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
@@ -642,10 +640,8 @@
                 
                 <div class="space-y-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-lg bg-obsidian border border-goldaccent/40 flex items-center justify-center p-1 overflow-hidden">
-                            <!-- Replace the img src below with your downloaded logo file name (e.g. logo.png) -->
+                        <div onclick="openLogoModal()" class="w-10 h-10 rounded-lg bg-obsidian border border-goldaccent/40 flex items-center justify-center p-1 overflow-hidden cursor-pointer hover:scale-105 transition-transform" title="Click to view logo">
                             <img src="logo.png" alt="The Eaglet Logo" class="w-full h-full object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-                            <!-- Fallback Vector Icon if logo.png is not found yet -->
                             <svg viewBox="0 0 240 140" class="w-full h-full" style="display:none;">
                                 <path fill="#facc15" d="M15,95 C32,80 55,68 78,53 C87,47 96,40 105,33 C108,30 111,26 114,22 C117,18 120,14 123,10 C124.5,8 126,6 127.5,4 C129,6 130.5,8 132,10 C135,14 138,18 141,22 C144,26 147,30 150,33 C159,40 168,47 177,53 C200,68 223,80 240,95 C222,94 203,91 185,86 C163,80 142,72 120,60 C98,72 77,80 55,86 C37,91 18,94 15,95 Z"/>
                             </svg>
@@ -711,6 +707,29 @@
         </div>
     </footer>
 
+    <!-- Click-to-View Logo Modal Pop-up -->
+    <div id="logo-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-darkcard border border-darkborder rounded-3xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl space-y-6 text-center">
+            <button onclick="closeLogoModal()" class="absolute top-4 right-4 text-gray-400 hover:text-goldaccent p-2 focus:outline-none">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="space-y-2">
+                <span class="text-goldaccent text-[10px] font-bold uppercase tracking-widest bg-obsidian px-3 py-1 rounded-full border border-darkborder">Official Branding</span>
+                <h3 class="text-xl font-extrabold text-white">The Eaglet Logo</h3>
+            </div>
+            <!-- Expanded Logo Preview Box -->
+            <div class="bg-obsidian border border-darkborder p-8 rounded-2xl flex items-center justify-center min-h-[220px]">
+                <img src="logo.png" alt="The Eaglet Logo Expanded" class="max-h-40 w-auto object-contain drop-shadow-[0_10px_15px_rgba(250,204,21,0.2)]" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <svg viewBox="0 0 240 140" class="w-48 h-28" style="display:none;">
+                    <path fill="#facc15" d="M15,95 C32,80 55,68 78,53 C87,47 96,40 105,33 C108,30 111,26 114,22 C117,18 120,14 123,10 C124.5,8 126,6 127.5,4 C129,6 130.5,8 132,10 C135,14 138,18 141,22 C144,26 147,30 150,33 C159,40 168,47 177,53 C200,68 223,80 240,95 C222,94 203,91 185,86 C163,80 142,72 120,60 C98,72 77,80 55,86 C37,91 18,94 15,95 Z"/>
+                </svg>
+            </div>
+            <button onclick="closeLogoModal()" class="w-full bg-goldaccent hover:bg-goldhover text-obsidian py-3 rounded-xl font-bold text-sm shadow-lg transition-transform hover:scale-[1.02]">
+                Close Preview
+            </button>
+        </div>
+    </div>
+
     <!-- Floating WhatsApp Button -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         <a href="https://wa.me/2348064921961?text=Hello%20The%20Eaglet%20Bar%20%26%20Hotel,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" aria-label="Chat on WhatsApp" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 group relative">
@@ -721,7 +740,7 @@
         </a>
     </div>
 
-    <!-- JavaScript for Interactivity -->
+    <!-- JavaScript for Interactivity & Logo Modal -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -735,6 +754,27 @@
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
+        });
+
+        // Logo Modal Functions
+        function openLogoModal() {
+            const modal = document.getElementById('logo-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeLogoModal() {
+            const modal = document.getElementById('logo-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close modal when clicking outside of modal content
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('logo-modal');
+            if (event.target === modal) {
+                closeLogoModal();
+            }
         });
 
         const today = new Date();
