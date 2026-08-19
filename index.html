@@ -73,6 +73,7 @@
             <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
                 <a href="#home" class="text-goldaccent transition-colors hover:text-goldaccent">Home</a>
+                <a href="#gallery" class="text-gray-300 hover:text-goldaccent transition-colors">Media Showcase</a>
                 <a href="#services" class="text-gray-300 hover:text-goldaccent transition-colors">Services</a>
                 <a href="#menu" class="text-gray-300 hover:text-goldaccent transition-colors">Bar & Menu</a>
                 <a href="#rooms" class="text-gray-300 hover:text-goldaccent transition-colors">Accommodation</a>
@@ -100,6 +101,7 @@
         <!-- Mobile Navigation Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-darkcard border-b border-darkborder px-6 py-6 space-y-4 shadow-2xl">
             <a href="#home" class="block text-goldaccent font-medium text-lg mobile-link">Home</a>
+            <a href="#gallery" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Media Showcase</a>
             <a href="#services" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Services</a>
             <a href="#menu" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Bar & Menu</a>
             <a href="#rooms" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Accommodation</a>
@@ -143,8 +145,8 @@
                         <a href="#rooms" class="w-full sm:w-auto bg-goldaccent hover:bg-goldhover text-obsidian font-bold px-8 py-4 rounded-xl shadow-xl shadow-goldaccent/20 transition-all text-center flex items-center justify-center gap-2">
                             <i class="fa-solid fa-bed"></i> Explore Rooms
                         </a>
-                        <a href="#services" class="w-full sm:w-auto bg-darkcard hover:bg-darkborder border border-darkborder text-white font-semibold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-star text-goldaccent"></i> View Services
+                        <a href="#gallery" class="w-full sm:w-auto bg-darkcard hover:bg-darkborder border border-darkborder text-white font-semibold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-photo-film text-goldaccent"></i> Watch Video & Photos
                         </a>
                     </div>
                     <!-- Quick Stats -->
@@ -164,7 +166,7 @@
                     </div>
                 </div>
 
-                <!-- Hero Visual Card -->
+                <!-- Hero Visual Card (Quick Suite Preview) -->
                 <div class="lg:col-span-5 relative">
                     <div class="relative mx-auto max-w-md lg:max-w-none">
                         <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-goldaccent to-yellow-600 opacity-30 blur-lg"></div>
@@ -193,8 +195,116 @@
         </div>
     </section>
 
-    <!-- Services & Facilities Section (Derived from Flyer) -->
-    <section id="services" class="py-24 bg-darkcard/40 border-t border-darkborder">
+    <!-- NEW: The Eaglet Suite Interactive Media Showcase (Photos & Videos) -->
+    <section id="gallery" class="py-24 bg-darkcard/40 border-t border-darkborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <span class="text-goldaccent text-xs font-bold uppercase tracking-widest bg-darkcard border border-darkborder px-4 py-1.5 rounded-full inline-block">
+                    Media Showcase
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">The Eaglet Suite & Facilities Tour</h2>
+                <p class="text-gray-400 text-sm sm:text-base">
+                    Explore high-resolution photos and video tours highlighting our executive rooms, luxury baths, reception, lounge, and spacious surroundings.
+                </p>
+            </div>
+
+            <!-- Media Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="filterMedia('all')" id="btn-all" class="px-5 py-2 rounded-xl text-xs font-bold bg-goldaccent text-obsidian shadow-md transition-all">All Media</button>
+                <button onclick="filterMedia('room')" id="btn-room" class="px-5 py-2 rounded-xl text-xs font-bold bg-darkcard border border-darkborder text-gray-300 hover:text-goldaccent transition-all">Executive Rooms</button>
+                <button onclick="filterMedia('bar')" id="btn-bar" class="px-5 py-2 rounded-xl text-xs font-bold bg-darkcard border border-darkborder text-gray-300 hover:text-goldaccent transition-all">Bar & Lounge</button>
+                <button onclick="filterMedia('video')" id="btn-video" class="px-5 py-2 rounded-xl text-xs font-bold bg-darkcard border border-darkborder text-gray-300 hover:text-goldaccent transition-all"><i class="fa-solid fa-video text-goldaccent mr-1"></i> Video Tours</button>
+            </div>
+
+            <!-- Media Grid -->
+            <div id="media-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Item 1: Executive Suite Bed -->
+                <div class="media-item room bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
+                    <div class="relative h-64 overflow-hidden bg-obsidian">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Executive Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent text-xs font-bold">Photo</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <p class="text-sm font-bold text-white">Executive Royal Room Bed Setup</p>
+                        <span class="text-xs text-gray-400">The Eaglet Suite</span>
+                    </div>
+                </div>
+
+                <!-- Item 2: Luxury Bathroom / Interior -->
+                <div class="media-item room bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
+                    <div class="relative h-64 overflow-hidden bg-obsidian">
+                        <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80" alt="Luxury Suite Interior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent text-xs font-bold">Photo</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <p class="text-sm font-bold text-white">VIP Suite Lounge & Interior</p>
+                        <span class="text-xs text-gray-400">The Eaglet Suite</span>
+                    </div>
+                </div>
+
+                <!-- Item 3: Video Tour Simulation Card -->
+                <div class="media-item video bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
+                    <div class="relative h-64 overflow-hidden bg-gradient-to-br from-gray-900 to-obsidian flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-50"></div>
+                        <div class="absolute inset-0 bg-obsidian/40"></div>
+                        <div class="relative z-10 w-14 h-14 rounded-full bg-goldaccent text-obsidian flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </div>
+                        <span class="absolute top-3 right-3 bg-emerald-500 text-white px-3 py-1 rounded-lg text-xs font-bold shadow-md"><i class="fa-solid fa-video mr-1"></i> Video Tour</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <p class="text-sm font-bold text-white">Full Hotel Walkthrough Video</p>
+                        <span class="text-xs text-goldaccent font-semibold">HD Quality</span>
+                    </div>
+                </div>
+
+                <!-- Item 4: Bar & Lounge -->
+                <div class="media-item bar bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
+                    <div class="relative h-64 overflow-hidden bg-obsidian">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" alt="Bar & Lounge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent text-xs font-bold">Photo</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <p class="text-sm font-bold text-white">The Eaglet Bar & Lounge Ambiance</p>
+                        <span class="text-xs text-gray-400">Nightlife</span>
+                    </div>
+                </div>
+
+                <!-- Item 5: Reception Desk -->
+                <div class="media-item room bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
+                    <div class="relative h-64 overflow-hidden bg-obsidian">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Hotel Reception" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent text-xs font-bold">Photo</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <p class="text-sm font-bold text-white">Front Desk & Reception Area</p>
+                        <span class="text-xs text-gray-400">Welcome Lobby</span>
+                    </div>
+                </div>
+
+                <!-- Item 6: Video Tour 2 -->
+                <div class="media-item video bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
+                    <div class="relative h-64 overflow-hidden bg-gradient-to-br from-gray-900 to-obsidian flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-50"></div>
+                        <div class="absolute inset-0 bg-obsidian/40"></div>
+                        <div class="relative z-10 w-14 h-14 rounded-full bg-goldaccent text-obsidian flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </div>
+                        <span class="absolute top-3 right-3 bg-emerald-500 text-white px-3 py-1 rounded-lg text-xs font-bold shadow-md"><i class="fa-solid fa-video mr-1"></i> Video Tour</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <p class="text-sm font-bold text-white">Executive Suite Room Tour</p>
+                        <span class="text-xs text-goldaccent font-semibold">HD Quality</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Facilities Section -->
+    <section id="services" class="py-24 border-t border-darkborder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
                 <span class="text-goldaccent text-xs font-bold uppercase tracking-widest bg-darkcard border border-darkborder px-4 py-1.5 rounded-full inline-block">
@@ -265,7 +375,7 @@
     </section>
 
     <!-- Bar & Drinks Section -->
-    <section id="menu" class="py-24 border-t border-darkborder">
+    <section id="menu" class="py-24 bg-darkcard/40 border-t border-darkborder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
                 <span class="text-goldaccent text-xs font-bold uppercase tracking-widest bg-darkcard border border-darkborder px-4 py-1.5 rounded-full inline-block">
@@ -393,7 +503,7 @@
     </section>
 
     <!-- Accommodation / Rooms Section -->
-    <section id="rooms" class="py-24 bg-darkcard/40 border-t border-darkborder">
+    <section id="rooms" class="py-24 border-t border-darkborder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
                 <span class="text-goldaccent text-xs font-bold uppercase tracking-widest bg-darkcard border border-darkborder px-4 py-1.5 rounded-full inline-block">
@@ -515,7 +625,7 @@
     </section>
 
     <!-- Instant Reservation / Booking System Section -->
-    <section id="booking" class="py-24 border-t border-darkborder relative">
+    <section id="booking" class="py-24 bg-darkcard/40 border-t border-darkborder relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto space-y-4 mb-12">
                 <span class="text-goldaccent text-xs font-bold uppercase tracking-widest bg-darkcard border border-darkborder px-4 py-1.5 rounded-full inline-block">
@@ -594,7 +704,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 bg-darkcard/40 border-t border-darkborder">
+    <section id="about" class="py-24 border-t border-darkborder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
@@ -662,6 +772,7 @@
                     <h4 class="text-white font-bold text-sm tracking-wider uppercase">Quick Links</h4>
                     <ul class="space-y-2.5 text-xs text-gray-400">
                         <li><a href="#home" class="hover:text-goldaccent transition-colors">Home</a></li>
+                        <li><a href="#gallery" class="hover:text-goldaccent transition-colors">Media Showcase</a></li>
                         <li><a href="#services" class="hover:text-goldaccent transition-colors">Services & Facilities</a></li>
                         <li><a href="#menu" class="hover:text-goldaccent transition-colors">Bar & Drink Menu</a></li>
                         <li><a href="#rooms" class="hover:text-goldaccent transition-colors">Accommodation & Rooms</a></li>
@@ -740,7 +851,7 @@
         </a>
     </div>
 
-    <!-- JavaScript for Interactivity & Logo Modal -->
+    <!-- JavaScript for Interactivity, Gallery Filters & Logo Modal -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -756,6 +867,27 @@
             });
         });
 
+        // Media Gallery Filter Script
+        function filterMedia(category) {
+            const items = document.querySelectorAll('.media-item');
+            const buttons = ['btn-all', 'btn-room', 'btn-bar', 'btn-video'];
+            
+            buttons.forEach(btnId => {
+                const btn = document.getElementById(btnId);
+                btn.className = "px-5 py-2 rounded-xl text-xs font-bold bg-darkcard border border-darkborder text-gray-300 hover:text-goldaccent transition-all";
+            });
+
+            document.getElementById('btn-' + category).className = "px-5 py-2 rounded-xl text-xs font-bold bg-goldaccent text-obsidian shadow-md transition-all";
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
         // Logo Modal Functions
         function openLogoModal() {
             const modal = document.getElementById('logo-modal');
@@ -769,7 +901,6 @@
             modal.classList.remove('flex');
         }
 
-        // Close modal when clicking outside of modal content
         window.addEventListener('click', function(event) {
             const modal = document.getElementById('logo-modal');
             if (event.target === modal) {
