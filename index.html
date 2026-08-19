@@ -73,7 +73,7 @@
             <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
                 <a href="#home" class="text-goldaccent transition-colors hover:text-goldaccent">Home</a>
-                <a href="#gallery" class="text-gray-300 hover:text-goldaccent transition-colors">Media Showcase</a>
+                <a href="#showcase" class="text-gray-300 hover:text-goldaccent transition-colors">Media Showcase</a>
                 <a href="#services" class="text-gray-300 hover:text-goldaccent transition-colors">Services</a>
                 <a href="#menu" class="text-gray-300 hover:text-goldaccent transition-colors">Bar & Menu</a>
                 <a href="#rooms" class="text-gray-300 hover:text-goldaccent transition-colors">Accommodation</a>
@@ -101,7 +101,7 @@
         <!-- Mobile Navigation Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-darkcard border-b border-darkborder px-6 py-6 space-y-4 shadow-2xl">
             <a href="#home" class="block text-goldaccent font-medium text-lg mobile-link">Home</a>
-            <a href="#gallery" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Media Showcase</a>
+            <a href="#showcase" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Media Showcase</a>
             <a href="#services" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Services</a>
             <a href="#menu" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Bar & Menu</a>
             <a href="#rooms" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Accommodation</a>
@@ -145,8 +145,8 @@
                         <a href="#rooms" class="w-full sm:w-auto bg-goldaccent hover:bg-goldhover text-obsidian font-bold px-8 py-4 rounded-xl shadow-xl shadow-goldaccent/20 transition-all text-center flex items-center justify-center gap-2">
                             <i class="fa-solid fa-bed"></i> Explore Rooms
                         </a>
-                        <a href="#gallery" class="w-full sm:w-auto bg-darkcard hover:bg-darkborder border border-darkborder text-white font-semibold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-photo-film text-goldaccent"></i> Watch Video & Photos
+                        <a href="#showcase" class="w-full sm:w-auto bg-darkcard hover:bg-darkborder border border-darkborder text-white font-semibold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-photo-film text-goldaccent"></i> Watch Media Showcase
                         </a>
                     </div>
                     <!-- Quick Stats -->
@@ -166,27 +166,19 @@
                     </div>
                 </div>
 
-                <!-- Hero Visual Card (Quick Suite Preview) -->
+                <!-- Hero Side Graphic -->
                 <div class="lg:col-span-5 relative">
                     <div class="relative mx-auto max-w-md lg:max-w-none">
                         <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-goldaccent to-yellow-600 opacity-30 blur-lg"></div>
-                        <div class="relative rounded-2xl bg-darkcard border border-darkborder overflow-hidden shadow-2xl p-4 sm:p-6 space-y-4">
-                            <div class="relative h-64 sm:h-72 rounded-xl overflow-hidden bg-gradient-to-br from-gray-900 to-obsidian flex items-center justify-center">
-                                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-60"></div>
-                                <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
-                                <div class="absolute bottom-4 left-4 right-4 bg-obsidian/80 backdrop-blur-md p-4 rounded-xl border border-darkborder flex items-center justify-between">
-                                    <div>
-                                        <p class="text-xs text-goldaccent font-semibold uppercase">The Eaglet Suite</p>
-                                        <p class="text-sm font-bold text-white">Executive Royal Room</p>
-                                    </div>
-                                    <span class="bg-goldaccent text-obsidian text-xs font-bold px-3 py-1 rounded-full">₦45,000/night</span>
-                                </div>
+                        <div class="relative rounded-2xl bg-darkcard border border-darkborder overflow-hidden shadow-2xl p-6 space-y-4 text-center">
+                            <div class="w-16 h-16 mx-auto rounded-2xl bg-goldaccent/10 border border-goldaccent/30 flex items-center justify-center text-goldaccent text-2xl">
+                                <i class="fa-solid fa-crown"></i>
                             </div>
-                            <div class="flex items-center justify-between text-sm text-gray-300 pt-2">
-                                <span class="flex items-center gap-2"><i class="fa-solid fa-car text-goldaccent"></i> Large Parking</span>
-                                <span class="flex items-center gap-2"><i class="fa-solid fa-wifi text-goldaccent"></i> Free WiFi</span>
-                                <span class="flex items-center gap-2"><i class="fa-solid fa-snowflake text-goldaccent"></i> AC Rooms</span>
-                            </div>
+                            <h3 class="text-xl font-bold text-white">The Eaglet Suite</h3>
+                            <p class="text-xs text-gray-400">Experience peerless comfort, executive lodging, and vibrant nightlife all in one magnificent destination.</p>
+                            <a href="#showcase" class="inline-block w-full bg-goldaccent hover:bg-goldhover text-obsidian py-3 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md transition-transform hover:scale-105">
+                                View Suite Videos & Photos
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -195,129 +187,114 @@
         </div>
     </section>
 
-    <!-- Media Showcase Section (Featuring "iglet bar video 1" & Gallery) -->
-    <section id="gallery" class="py-24 bg-darkcard/40 border-t border-darkborder">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+    <!-- INTERACTIVE DYNAMIC MEDIA SLIDER / CAROUSEL SHOWCASE SECTION -->
+    <section id="showcase" class="py-24 bg-darkcard/40 border-t border-darkborder relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-12">
                 <span class="text-goldaccent text-xs font-bold uppercase tracking-widest bg-darkcard border border-darkborder px-4 py-1.5 rounded-full inline-block">
-                    Media Showcase
+                    Interactive Media Showcase
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">The Eaglet Suite & Facilities Tour</h2>
-                <p class="text-gray-400 text-sm sm:text-base">
-                    Watch our official video tour and explore high-resolution photos highlighting our executive rooms, luxury baths, reception, and lounge ambiance.
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">The Eaglet Suite & Facilities Gallery</h2>
+                <p class="text-gray-400 text-sm">
+                    Swipe or tap the navigation buttons below to view actual photos and videos (including <strong class="text-white">Iglet Bar Video 1</strong>) of our rooms, bar, and amenities.
                 </p>
             </div>
 
-            <!-- Featured Video Player Card ("iglet bar video 1") -->
-            <div class="mb-12 bg-darkcard border border-goldaccent/40 rounded-3xl overflow-hidden shadow-2xl p-4 sm:p-8">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center gap-2">
-                        <span class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
-                        <h3 class="text-lg font-bold text-white">Featured Video Tour: Eaglet Bar Video 1</h3>
-                    </div>
-                    <span class="text-xs bg-goldaccent text-obsidian font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Official Upload</span>
-                </div>
-                <!-- Video Container (Replace src with your actual video file name e.g., 'iglet-bar-video-1.mp4' or embed URL) -->
-                <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-obsidian border border-darkborder flex items-center justify-center">
-                    <video controls class="w-full h-full object-cover" poster="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80">
-                        <source src="iglet-bar-video-1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-
-            <!-- Media Category Filter Tabs -->
-            <div class="flex flex-wrap justify-center gap-3 mb-10">
-                <button onclick="filterMedia('all')" id="btn-all" class="px-5 py-2 rounded-xl text-xs font-bold bg-goldaccent text-obsidian shadow-md transition-all">All Media</button>
-                <button onclick="filterMedia('room')" id="btn-room" class="px-5 py-2 rounded-xl text-xs font-bold bg-darkcard border border-darkborder text-gray-300 hover:text-goldaccent transition-all">Executive Rooms</button>
-                <button onclick="filterMedia('bar')" id="btn-bar" class="px-5 py-2 rounded-xl text-xs font-bold bg-darkcard border border-darkborder text-gray-300 hover:text-goldaccent transition-all">Bar & Lounge</button>
-                <button onclick="filterMedia('video')" id="btn-video" class="px-5 py-2 rounded-xl text-xs font-bold bg-darkcard border border-darkborder text-gray-300 hover:text-goldaccent transition-all"><i class="fa-solid fa-video text-goldaccent mr-1"></i> Video Tours</button>
-            </div>
-
-            <!-- Media Grid -->
-            <div id="media-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Dynamic Slider Container -->
+            <div class="relative rounded-3xl bg-darkcard border border-darkborder overflow-hidden shadow-2xl group">
                 
-                <!-- Item 1: Executive Suite Bed -->
-                <div class="media-item room bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
-                    <div class="relative h-64 overflow-hidden bg-obsidian">
-                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Executive Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 right-3 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent text-xs font-bold">Photo</span>
-                    </div>
-                    <div class="p-4 flex justify-between items-center">
-                        <p class="text-sm font-bold text-white">Executive Royal Room Bed Setup</p>
-                        <span class="text-xs text-gray-400">The Eaglet Suite</span>
-                    </div>
-                </div>
-
-                <!-- Item 2: Luxury Bathroom / Interior -->
-                <div class="media-item room bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
-                    <div class="relative h-64 overflow-hidden bg-obsidian">
-                        <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80" alt="Luxury Suite Interior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 right-3 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent text-xs font-bold">Photo</span>
-                    </div>
-                    <div class="p-4 flex justify-between items-center">
-                        <p class="text-sm font-bold text-white">VIP Suite Lounge & Interior</p>
-                        <span class="text-xs text-gray-400">The Eaglet Suite</span>
-                    </div>
-                </div>
-
-                <!-- Item 3: Iglet Bar Video 1 Quick Card -->
-                <div class="media-item video bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
-                    <div class="relative h-64 overflow-hidden bg-gradient-to-br from-gray-900 to-obsidian flex items-center justify-center">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-50"></div>
-                        <div class="absolute inset-0 bg-obsidian/40"></div>
-                        <div class="relative z-10 w-14 h-14 rounded-full bg-goldaccent text-obsidian flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-play ml-1"></i>
+                <!-- Slider Track -->
+                <div id="media-slider-track" class="flex transition-transform duration-500 ease-out h-[360px] sm:h-[500px]">
+                    
+                    <!-- SLIDE 1: Video ("iglet bar video 1") -->
+                    <div class="min-w-full h-full relative flex items-center justify-center bg-obsidian">
+                        <video controls class="w-full h-full object-cover" poster="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80">
+                            <source src="iglet-bar-video-1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute bottom-6 left-6 right-6 bg-obsidian/85 backdrop-blur-md p-4 rounded-2xl border border-darkborder flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] bg-red-500 text-white font-extrabold px-2.5 py-0.5 rounded-full uppercase">Featured Video</span>
+                                <h4 class="text-sm sm:text-base font-bold text-white mt-1">Iglet Bar Video 1 - Full Tour</h4>
+                            </div>
+                            <span class="text-xs text-goldaccent font-semibold hidden sm:inline">Tap to Play</span>
                         </div>
-                        <span class="absolute top-3 right-3 bg-emerald-500 text-white px-3 py-1 rounded-lg text-xs font-bold shadow-md"><i class="fa-solid fa-video mr-1"></i> Video Tour</span>
                     </div>
-                    <div class="p-4 flex justify-between items-center">
-                        <p class="text-sm font-bold text-white">Iglet Bar Video 1</p>
-                        <span class="text-xs text-goldaccent font-semibold">HD Quality</span>
-                    </div>
-                </div>
 
-                <!-- Item 4: Bar & Lounge -->
-                <div class="media-item bar bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
-                    <div class="relative h-64 overflow-hidden bg-obsidian">
-                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" alt="Bar & Lounge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 right-3 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent text-xs font-bold">Photo</span>
-                    </div>
-                    <div class="p-4 flex justify-between items-center">
-                        <p class="text-sm font-bold text-white">The Eaglet Bar & Lounge Ambiance</p>
-                        <span class="text-xs text-gray-400">Nightlife</span>
-                    </div>
-                </div>
-
-                <!-- Item 5: Reception Desk -->
-                <div class="media-item room bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
-                    <div class="relative h-64 overflow-hidden bg-obsidian">
-                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Hotel Reception" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 right-3 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent text-xs font-bold">Photo</span>
-                    </div>
-                    <div class="p-4 flex justify-between items-center">
-                        <p class="text-sm font-bold text-white">Front Desk & Reception Area</p>
-                        <span class="text-xs text-gray-400">Welcome Lobby</span>
-                    </div>
-                </div>
-
-                <!-- Item 6: Video Tour 2 -->
-                <div class="media-item video bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-xl group hover:border-goldaccent/50 transition-all">
-                    <div class="relative h-64 overflow-hidden bg-gradient-to-br from-gray-900 to-obsidian flex items-center justify-center">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-50"></div>
-                        <div class="absolute inset-0 bg-obsidian/40"></div>
-                        <div class="relative z-10 w-14 h-14 rounded-full bg-goldaccent text-obsidian flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-play ml-1"></i>
+                    <!-- SLIDE 2: Executive Royal Room Photo -->
+                    <div class="min-w-full h-full relative flex items-center justify-center bg-obsidian">
+                        <!-- REPLACE src WITH ACTUAL CLIENT IMAGE URL OR FILE NAME -->
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80" alt="Executive Royal Room" class="w-full h-full object-cover">
+                        <div class="absolute bottom-6 left-6 right-6 bg-obsidian/85 backdrop-blur-md p-4 rounded-2xl border border-darkborder flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] bg-goldaccent text-obsidian font-extrabold px-2.5 py-0.5 rounded-full uppercase">Accommodation</span>
+                                <h4 class="text-sm sm:text-base font-bold text-white mt-1">Executive Royal Room Setup</h4>
+                            </div>
+                            <span class="text-xs text-goldaccent font-semibold">₦32,000 / night</span>
                         </div>
-                        <span class="absolute top-3 right-3 bg-emerald-500 text-white px-3 py-1 rounded-lg text-xs font-bold shadow-md"><i class="fa-solid fa-video mr-1"></i> Video Tour</span>
                     </div>
-                    <div class="p-4 flex justify-between items-center">
-                        <p class="text-sm font-bold text-white">Executive Suite Room Tour</p>
-                        <span class="text-xs text-goldaccent font-semibold">HD Quality</span>
+
+                    <!-- SLIDE 3: VIP Suite Lounge Photo -->
+                    <div class="min-w-full h-full relative flex items-center justify-center bg-obsidian">
+                        <!-- REPLACE src WITH ACTUAL CLIENT IMAGE URL OR FILE NAME -->
+                        <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80" alt="VIP Suite Lounge" class="w-full h-full object-cover">
+                        <div class="absolute bottom-6 left-6 right-6 bg-obsidian/85 backdrop-blur-md p-4 rounded-2xl border border-darkborder flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] bg-goldaccent text-obsidian font-extrabold px-2.5 py-0.5 rounded-full uppercase">Ultimate Luxury</span>
+                                <h4 class="text-sm sm:text-base font-bold text-white mt-1">The Eaglet Royal VIP Suite Interior</h4>
+                            </div>
+                            <span class="text-xs text-goldaccent font-semibold">₦45,000 / night</span>
+                        </div>
                     </div>
+
+                    <!-- SLIDE 4: Bar & Lounge Photo -->
+                    <div class="min-w-full h-full relative flex items-center justify-center bg-obsidian">
+                        <!-- REPLACE src WITH ACTUAL CLIENT IMAGE URL OR FILE NAME -->
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" alt="Bar & Lounge" class="w-full h-full object-cover">
+                        <div class="absolute bottom-6 left-6 right-6 bg-obsidian/85 backdrop-blur-md p-4 rounded-2xl border border-darkborder flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] bg-goldaccent text-obsidian font-extrabold px-2.5 py-0.5 rounded-full uppercase">Nightlife</span>
+                                <h4 class="text-sm sm:text-base font-bold text-white mt-1">The Eaglet Bar & Lounge Ambiance</h4>
+                            </div>
+                            <span class="text-xs text-goldaccent font-semibold">Open 24/7</span>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 5: Reception / Compound Photo -->
+                    <div class="min-w-full h-full relative flex items-center justify-center bg-obsidian">
+                        <!-- REPLACE src WITH ACTUAL CLIENT IMAGE URL OR FILE NAME -->
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Reception Lobby" class="w-full h-full object-cover">
+                        <div class="absolute bottom-6 left-6 right-6 bg-obsidian/85 backdrop-blur-md p-4 rounded-2xl border border-darkborder flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] bg-goldaccent text-obsidian font-extrabold px-2.5 py-0.5 rounded-full uppercase">Facilities</span>
+                                <h4 class="text-sm sm:text-base font-bold text-white mt-1">Front Desk & Reception Lobby</h4>
+                            </div>
+                            <span class="text-xs text-goldaccent font-semibold">Secure & Welcoming</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Slider Navigation Controls (Previous / Next Buttons) -->
+                <button onclick="moveSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-obsidian/80 hover:bg-goldaccent text-white hover:text-obsidian border border-darkborder flex items-center justify-center transition-all shadow-xl z-20 focus:outline-none" aria-label="Previous Slide">
+                    <i class="fa-solid fa-chevron-left text-lg"></i>
+                </button>
+                <button onclick="moveSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-obsidian/80 hover:bg-goldaccent text-white hover:text-obsidian border border-darkborder flex items-center justify-center transition-all shadow-xl z-20 focus:outline-none" aria-label="Next Slide">
+                    <i class="fa-solid fa-chevron-right text-lg"></i>
+                </button>
+
+                <!-- Carousel Pagination Dots -->
+                <div class="absolute top-4 right-4 z-20 flex gap-2 bg-obsidian/80 backdrop-blur-md px-3.5 py-2 rounded-full border border-darkborder">
+                    <button onclick="currentSlide(0)" class="slider-dot w-2.5 h-2.5 rounded-full bg-goldaccent transition-all" aria-label="Slide 1"></button>
+                    <button onclick="currentSlide(1)" class="slider-dot w-2.5 h-2.5 rounded-full bg-gray-600 hover:bg-goldaccent transition-all" aria-label="Slide 2"></button>
+                    <button onclick="currentSlide(2)" class="slider-dot w-2.5 h-2.5 rounded-full bg-gray-600 hover:bg-goldaccent transition-all" aria-label="Slide 3"></button>
+                    <button onclick="currentSlide(3)" class="slider-dot w-2.5 h-2.5 rounded-full bg-gray-600 hover:bg-goldaccent transition-all" aria-label="Slide 4"></button>
+                    <button onclick="currentSlide(4)" class="slider-dot w-2.5 h-2.5 rounded-full bg-gray-600 hover:bg-goldaccent transition-all" aria-label="Slide 5"></button>
                 </div>
 
             </div>
+            
+            <p class="text-center text-xs text-gray-500 mt-4">Tip: Swipe left/right on mobile screens or click the arrow buttons to cycle through the client's actual media assets.</p>
         </div>
     </section>
 
@@ -790,7 +767,7 @@
                     <h4 class="text-white font-bold text-sm tracking-wider uppercase">Quick Links</h4>
                     <ul class="space-y-2.5 text-xs text-gray-400">
                         <li><a href="#home" class="hover:text-goldaccent transition-colors">Home</a></li>
-                        <li><a href="#gallery" class="hover:text-goldaccent transition-colors">Media Showcase</a></li>
+                        <li><a href="#showcase" class="hover:text-goldaccent transition-colors">Media Showcase</a></li>
                         <li><a href="#services" class="hover:text-goldaccent transition-colors">Services & Facilities</a></li>
                         <li><a href="#menu" class="hover:text-goldaccent transition-colors">Bar & Drink Menu</a></li>
                         <li><a href="#rooms" class="hover:text-goldaccent transition-colors">Accommodation & Rooms</a></li>
@@ -869,7 +846,7 @@
         </a>
     </div>
 
-    <!-- JavaScript for Interactivity, Gallery Filters & Logo Modal -->
+    <!-- JavaScript for Interactivity, Carousel Slider & Logo Modal -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -885,25 +862,56 @@
             });
         });
 
-        // Media Gallery Filter Script
-        function filterMedia(category) {
-            const items = document.querySelectorAll('.media-item');
-            const buttons = ['btn-all', 'btn-room', 'btn-bar', 'btn-video'];
-            
-            buttons.forEach(btnId => {
-                const btn = document.getElementById(btnId);
-                btn.className = "px-5 py-2 rounded-xl text-xs font-bold bg-darkcard border border-darkborder text-gray-300 hover:text-goldaccent transition-all";
-            });
+        // Media Carousel Slider Logic
+        let currentSlideIndex = 0;
+        const sliderTrack = document.getElementById('media-slider-track');
+        const totalSlides = sliderTrack ? sliderTrack.children.length : 0;
+        const dots = document.querySelectorAll('.slider-dot');
 
-            document.getElementById('btn-' + category).className = "px-5 py-2 rounded-xl text-xs font-bold bg-goldaccent text-obsidian shadow-md transition-all";
-
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
+        function updateSlider() {
+            if (!sliderTrack) return;
+            sliderTrack.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                if (index === currentSlideIndex) {
+                    dot.className = "slider-dot w-6 h-2.5 rounded-full bg-goldaccent transition-all";
                 } else {
-                    item.style.display = 'none';
+                    dot.className = "slider-dot w-2.5 h-2.5 rounded-full bg-gray-600 hover:bg-goldaccent transition-all";
                 }
             });
+        }
+
+        function moveSlide(direction) {
+            currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index;
+            updateSlider();
+        }
+
+        // Touch/Swipe Support for Mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        if (sliderTrack) {
+            sliderTrack.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+
+            sliderTrack.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+        }
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                moveSlide(1); // Swipe Left -> Next
+            }
+            if (touchEndX > touchStartX + 50) {
+                moveSlide(-1); // Swipe Right -> Prev
+            }
         }
 
         // Logo Modal Functions
