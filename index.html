@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Eaglet Bar & Hotel | Umuohia, Ikwuano, Abia State</title>
-    <!-- Tailwind CSS CDN -->
+    <title>The Eaglet Bar & Hotel | Umuahia, Ikwuano, Abia State</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,9 +23,7 @@
             }
         }
     </script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -52,11 +49,9 @@
 </head>
 <body class="bg-obsidian text-gray-100 antialiased selection:bg-goldaccent selection:text-obsidian">
 
-    <!-- Header & Sticky Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-obsidian/95 backdrop-blur-md border-b border-darkborder transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo Area with Click-to-View Modal Trigger -->
             <div class="flex items-center gap-3">
                 <button onclick="openLogoModal()" class="w-12 h-10 rounded-lg bg-obsidian border border-goldaccent/40 flex items-center justify-center shadow-lg shadow-goldaccent/10 hover:scale-105 transition-transform p-1 overflow-hidden cursor-pointer focus:outline-none" title="Click to view logo">
                     <img src="logo.png" alt="The Eaglet Logo" class="w-full h-full object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
@@ -70,7 +65,6 @@
                 </a>
             </div>
 
-            <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
                 <a href="#home" class="text-goldaccent transition-colors hover:text-goldaccent">Home</a>
                 <a href="#showcase" class="text-gray-300 hover:text-goldaccent transition-colors">Media Showcase</a>
@@ -81,7 +75,6 @@
                 <a href="#contact" class="text-gray-300 hover:text-goldaccent transition-colors">Contact</a>
             </nav>
 
-            <!-- Header Action Buttons -->
             <div class="hidden md:flex items-center gap-4">
                 <div class="flex flex-col text-right">
                     <a href="tel:+2348064921961" class="text-xs font-semibold text-gray-300 hover:text-goldaccent transition-colors">+234 806 492 1961</a>
@@ -92,13 +85,11 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Toggle Button -->
             <button id="menu-toggle" class="md:hidden text-gray-300 hover:text-goldaccent focus:outline-none p-2" aria-label="Toggle Menu">
                 <i class="fa-solid fa-bars text-2xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Navigation Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-darkcard border-b border-darkborder px-6 py-6 space-y-4 shadow-2xl">
             <a href="#home" class="block text-goldaccent font-medium text-lg mobile-link">Home</a>
             <a href="#showcase" class="block text-gray-300 hover:text-goldaccent font-medium text-lg mobile-link">Media Showcase</a>
@@ -121,7 +112,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden flex items-center min-h-screen">
         <div class="absolute inset-0 z-0 opacity-40 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-500/20 via-obsidian to-obsidian"></div>
         <div class="absolute -top-40 -right-40 w-96 h-96 bg-goldaccent/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -129,7 +119,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Hero Content -->
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-darkcard border border-darkborder text-goldaccent text-xs font-semibold tracking-wide uppercase">
                         <i class="fa-solid fa-location-dot text-goldaccent"></i> Umuahia, Amaoba Ime Oboro, Ikwuano LGA, Abia State
@@ -149,7 +138,6 @@
                             <i class="fa-solid fa-photo-film text-goldaccent"></i> Watch Media Showcase
                         </a>
                     </div>
-                    <!-- Quick Stats -->
                     <div class="grid grid-cols-3 gap-4 pt-8 border-t border-darkborder/60 max-w-lg mx-auto lg:mx-0">
                         <div>
                             <p class="text-2xl sm:text-3xl font-extrabold text-goldaccent">Large</p>
@@ -166,7 +154,6 @@
                     </div>
                 </div>
 
-                <!-- Hero Side Graphic -->
                 <div class="lg:col-span-5 relative">
                     <div class="relative mx-auto max-w-md lg:max-w-none">
                         <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-goldaccent to-yellow-600 opacity-30 blur-lg"></div>
@@ -187,7 +174,6 @@
         </div>
     </section>
 
-    <!-- INTERACTIVE DYNAMIC MEDIA SLIDER / CAROUSEL SHOWCASE SECTION -->
     <section id="showcase" class="py-24 bg-darkcard/40 border-t border-darkborder relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto space-y-4 mb-12">
@@ -196,17 +182,14 @@
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">The Eaglet Suite & Facilities Gallery</h2>
                 <p class="text-gray-400 text-sm">
-                    Swipe or tap the navigation buttons below to view actual photos and videos (including <strong class="text-white">Eaglet bar v1</strong>) of our rooms, bar, and amenities.
+                    Swipe or tap the navigation buttons below to view actual photos and videos of our rooms, bar, and amenities.
                 </p>
             </div>
 
-            <!-- Dynamic Slider Container -->
             <div class="relative rounded-3xl bg-darkcard border border-darkborder overflow-hidden shadow-2xl group">
                 
-                <!-- Slider Track -->
                 <div id="media-slider-track" class="flex transition-transform duration-500 ease-out h-[360px] sm:h-[500px]">
                     
-                    <!-- SLIDE 1: Video ("Eaglet bar v1") -->
                     <div class="min-w-full h-full relative flex items-center justify-center bg-obsidian">
                         <video controls class="w-full h-full object-cover" poster="pic1.jpeg">
                             <source src="iglet-bar-video-1.mp4" type="video/mp4">
@@ -221,7 +204,6 @@
                         </div>
                     </div>
 
-                    <!-- SLIDE 2: Garden Photo -->
                     <div class="min-w-full h-full relative flex items-center justify-center bg-obsidian">
                         <img src="pic3.jpeg" alt="The Eaglet Bar Garden" class="w-full h-full object-cover">
                         <div class="absolute bottom-6 left-6 right-6 bg-obsidian/85 backdrop-blur-md p-4 rounded-2xl border border-darkborder flex items-center justify-between">
@@ -233,7 +215,6 @@
                         </div>
                     </div>
 
-                    <!-- SLIDE 3: VIP Lounge Photo -->
                     <div class="min-w-full h-full relative flex items-center justify-center bg-obsidian">
                          <video controls class="w-full h-full object-cover" poster="pic2.jpeg">
                             <source src="VIP LOUNGE.mp4" type="video/mp4">
@@ -248,7 +229,6 @@
                         </div>
                     </div>
 
-                    <!-- SLIDE 4: Bar & Lounge Photo -->
                     <div class="min-w-full h-full relative flex items-center justify-center bg-obsidian">
                         <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" alt="Bar & Lounge" class="w-full h-full object-cover">
                         <div class="absolute bottom-6 left-6 right-6 bg-obsidian/85 backdrop-blur-md p-4 rounded-2xl border border-darkborder flex items-center justify-between">
@@ -260,7 +240,6 @@
                         </div>
                     </div>
 
-                    <!-- SLIDE 5: Reception / Compound Photo -->
                     <div class="min-w-full h-full relative flex items-center justify-center bg-obsidian">
                         <img src="pic4.jpeg" alt="Compound Photo" class="w-full h-full object-cover">
                         <div class="absolute bottom-6 left-6 right-6 bg-obsidian/85 backdrop-blur-md p-4 rounded-2xl border border-darkborder flex items-center justify-between">
@@ -274,7 +253,6 @@
 
                 </div>
 
-                <!-- Slider Navigation Controls (Previous / Next Buttons) -->
                 <button onclick="moveSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-obsidian/80 hover:bg-goldaccent text-white hover:text-obsidian border border-darkborder flex items-center justify-center transition-all shadow-xl z-20 focus:outline-none" aria-label="Previous Slide">
                     <i class="fa-solid fa-chevron-left text-lg"></i>
                 </button>
@@ -282,7 +260,6 @@
                     <i class="fa-solid fa-chevron-right text-lg"></i>
                 </button>
 
-                <!-- Carousel Pagination Dots -->
                 <div class="absolute top-4 right-4 z-20 flex gap-2 bg-obsidian/80 backdrop-blur-md px-3.5 py-2 rounded-full border border-darkborder">
                     <button onclick="currentSlide(0)" class="slider-dot w-2.5 h-2.5 rounded-full bg-goldaccent transition-all" aria-label="Slide 1"></button>
                     <button onclick="currentSlide(1)" class="slider-dot w-2.5 h-2.5 rounded-full bg-gray-600 hover:bg-goldaccent transition-all" aria-label="Slide 2"></button>
@@ -297,7 +274,6 @@
         </div>
     </section>
 
-    <!-- Services & Facilities Section -->
     <section id="services" class="py-24 border-t border-darkborder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -311,7 +287,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group">
                     <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl mb-4 group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
                         <i class="fa-solid fa-utensils"></i>
@@ -320,7 +295,6 @@
                     <p class="text-gray-400 text-xs">Professional outdoor and indoor catering services with local and continental dishes prepared fresh.</p>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group">
                     <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl mb-4 group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
                         <i class="fa-solid fa-building-columns"></i>
@@ -329,7 +303,6 @@
                     <p class="text-gray-400 text-xs">A spacious, well-ventilated meeting and events hall suitable for corporate meetings, seminars, and community gatherings.</p>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group">
                     <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl mb-4 group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
                         <i class="fa-solid fa-cake-candles"></i>
@@ -338,7 +311,6 @@
                     <p class="text-gray-400 text-xs">Host memorable birthday parties, anniversaries, and get-togethers in our cozy indoor/outdoor ambience.</p>
                 </div>
 
-                <!-- Service 4 -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group">
                     <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl mb-4 group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
                         <i class="fa-solid fa-circle-dot"></i>
@@ -347,7 +319,6 @@
                     <p class="text-gray-400 text-xs">Unwind and challenge your friends to an engaging game of snooker right inside our lively lounge area.</p>
                 </div>
 
-                <!-- Service 5 -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group">
                     <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl mb-4 group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
                         <i class="fa-solid fa-wine-glass"></i>
@@ -356,7 +327,6 @@
                     <p class="text-gray-400 text-xs">Fully stocked bar offering chilled beers, rich cocktails, fine wines, and premium spirits 24/7.</p>
                 </div>
 
-                <!-- Service 6 -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group">
                     <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl mb-4 group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
                         <i class="fa-solid fa-square-parking"></i>
@@ -368,7 +338,6 @@
         </div>
     </section>
 
-    <!-- Bar & Drinks Section -->
     <section id="menu" class="py-24 bg-darkcard/40 border-t border-darkborder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -381,10 +350,8 @@
                 </p>
             </div>
 
-            <!-- Menu Grid Categories -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Category 1: Signature Cocktails -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group">
                     <div class="flex items-center justify-between mb-6">
                         <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
@@ -420,7 +387,6 @@
                     </div>
                 </div>
 
-                <!-- Category 2: Beers & Spirits -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group">
                     <div class="flex items-center justify-between mb-6">
                         <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
@@ -456,7 +422,6 @@
                     </div>
                 </div>
 
-                <!-- Category 3: Grill & Snacks -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl hover:border-goldaccent/50 transition-all group md:col-span-2 lg:col-span-1">
                     <div class="flex items-center justify-between mb-6">
                         <div class="w-12 h-12 rounded-xl bg-goldaccent/10 flex items-center justify-center text-goldaccent text-xl group-hover:bg-goldaccent group-hover:text-obsidian transition-colors">
@@ -496,7 +461,6 @@
         </div>
     </section>
 
-    <!-- Accommodation / Rooms Section -->
     <section id="rooms" class="py-24 border-t border-darkborder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -509,16 +473,17 @@
                 </p>
             </div>
 
-            <!-- 3 Distinct Room Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Room 1: Standard Cozy Suite -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-goldaccent/50 transition-all group">
                     <div>
-                        <div class="relative h-56 bg-gradient-to-br from-gray-800 to-obsidian overflow-hidden">
-                            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center group-hover:scale-105 transition-transform duration-500 opacity-70"></div>
-                            <div class="absolute top-4 right-4 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent font-bold text-xs">
-                                Standard
+                        <div class="relative h-56 bg-obsidian overflow-hidden">
+                            <video controls class="w-full h-full object-cover" poster="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80">
+                                <source src="eaglet bar room1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="absolute top-4 right-4 bg-obsidian/80 backdrop-blur-md px-3 py-1 rounded-lg border border-darkborder text-goldaccent font-bold text-xs pointer-events-none">
+                                Room Video Tour
                             </div>
                         </div>
                         <div class="p-6 space-y-4">
@@ -546,7 +511,6 @@
                     </div>
                 </div>
 
-                <!-- Room 2: Executive Deluxe Room -->
                 <div class="bg-darkcard border border-goldaccent/60 rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between transform md:-translate-y-2 group">
                     <div class="absolute top-0 right-0 z-20 bg-goldaccent text-obsidian text-[10px] font-extrabold px-4 py-1 rounded-bl-xl uppercase tracking-wider shadow-md">
                         Most Popular
@@ -580,7 +544,6 @@
                     </div>
                 </div>
 
-                <!-- Room 3: The Eaglet Royal VIP Suite -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-goldaccent/50 transition-all group">
                     <div>
                         <div class="relative h-56 bg-gradient-to-br from-gray-800 to-obsidian overflow-hidden">
@@ -618,7 +581,6 @@
         </div>
     </section>
 
-    <!-- Instant Reservation / Booking System Section -->
     <section id="booking" class="py-24 bg-darkcard/40 border-t border-darkborder relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto space-y-4 mb-12">
@@ -697,7 +659,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-24 border-t border-darkborder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -738,7 +699,6 @@
         </div>
     </section>
 
-    <!-- Contact & Footer Integration -->
     <footer id="contact" class="bg-darkcard border-t border-darkborder pt-20 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-darkborder">
@@ -813,7 +773,6 @@
         </div>
     </footer>
 
-    <!-- Click-to-View Logo Modal Pop-up -->
     <div id="logo-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
         <div class="bg-darkcard border border-darkborder rounded-3xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl space-y-6 text-center">
             <button onclick="closeLogoModal()" class="absolute top-4 right-4 text-gray-400 hover:text-goldaccent p-2 focus:outline-none">
@@ -823,7 +782,6 @@
                 <span class="text-goldaccent text-[10px] font-bold uppercase tracking-widest bg-obsidian px-3 py-1 rounded-full border border-darkborder">Official Branding</span>
                 <h3 class="text-xl font-extrabold text-white">The Eaglet Logo</h3>
             </div>
-            <!-- Expanded Logo Preview Box -->
             <div class="bg-obsidian border border-darkborder p-8 rounded-2xl flex items-center justify-center min-h-[220px]">
                 <img src="logo.png" alt="The Eaglet Logo Expanded" class="max-h-40 w-auto object-contain drop-shadow-[0_10px_15px_rgba(250,204,21,0.2)]" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
                 <svg viewBox="0 0 240 140" class="w-48 h-28" style="display:none;">
@@ -836,7 +794,6 @@
         </div>
     </div>
 
-    <!-- Floating WhatsApp Button -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         <a href="https://wa.me/2348064921961?text=Hello%20The%20Eaglet%20Bar%20%26%20Hotel,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" aria-label="Chat on WhatsApp" class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 group relative">
             <i class="fa-brands fa-whatsapp text-2xl"></i>
@@ -846,7 +803,6 @@
         </a>
     </div>
 
-    <!-- JavaScript for Interactivity, Carousel Slider & Logo Modal -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
